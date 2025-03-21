@@ -1,0 +1,524 @@
+# Copyright (C) 2020 Quectel.
+# All rights reserved.
+#
+
+menu "quectel AT commands"
+
+config QUEC_PROJECT_FEATURE_ATC_PARSE
+    bool "ATC parse enabled"
+    depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_FEATURE_GENERAL_AT
+    bool "AT of GENERAL enabled"
+    depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_ATCMD_APP_SUPPORT
+    bool "Quectel AT Standard package"
+    depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_FEATURE_AUDIO_AT
+    bool "AT of AUDIO enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_AUDIO
+    default y
+
+config QUEC_PROJECT_FEATURE_TTS_AT
+    bool "AT of TTS enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_AUDIO
+    depends on QUEC_PROJECT_FEATURE_TTS
+	default n	if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_EXT_CODEC_AT
+    bool "AT of EXT_CODEC enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_AUDIO
+    depends on QUEC_PROJECT_FEATURE_EXT_CODEC
+    default y
+	
+config QUEC_PROJECT_FEATURE_BT_AT
+    bool "AT of BT enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_BT  
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y
+
+config QUEC_PROJECT_FEATURE_BT_HFP_AT
+    bool "AT of BT HFP enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_BT
+	depends on QUEC_PROJECT_FEATURE_BT_HFP  
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y
+
+config QUEC_PROJECT_FEATURE_BT_HFP_AG_AT
+    bool "AT of BT HFP enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_BT
+	depends on QUEC_PROJECT_FEATURE_BT_HFP_AG
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y
+
+config QUEC_PROJECT_FEATURE_BT_SPP_AT
+    bool "AT of BT SPP enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_BT
+	depends on QUEC_PROJECT_FEATURE_BT_SPP  
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y
+	
+config QUEC_PROJECT_FEATURE_BT_A2DP_AVRCP_AT
+    bool "AT of BT  A2DP & AVRCP enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_BT  
+	depends on QUEC_PROJECT_FEATURE_BT_A2DP_AVRCP
+ 	default n if QL_OPEN_EXPORT_PKG
+    default y
+	
+config QUEC_PROJECT_FEATURE_BLE_GATT_AT
+    bool "AT of BLE_GATT enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_BT
+	depends on QUEC_PROJECT_FEATURE_BLE_GATT	
+ 	default n if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_CALL_AT
+    bool "AT of CALL enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_VOICE_CALL
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y
+
+config QUEC_PROJECT_FEATURE_FILE_AT
+    bool "AT of FILE enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_FILE
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y
+
+config QUEC_PROJECT_FEATURE_FLASH_AT
+    bool "AT of FLASH enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT    
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default n
+
+config QUEC_PROJECT_FEATURE_FTP_AT
+    bool "AT of FTP enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_FTP
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y
+
+config QUEC_PROJECT_FEATURE_GNSS_AT
+    bool "AT of GNSS enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_GNSS  
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y
+
+config QUEC_PROJECT_FEATURE_RTK_AT
+    bool "AT of RTK enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_RTK	
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default n
+	
+config QUEC_PROJECT_FEATURE_HTTP_AT
+    bool "AT of HTTP enabled"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET    
+    depends on QUEC_PROJECT_FEATURE_HTTP
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y
+	
+config QUEC_PROJECT_FEATURE_DMHTTP_AT
+    bool "AT of DMHTTP enabled"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET    
+    depends on QUEC_PROJECT_FEATURE_DMHTTP
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y
+	
+config QUEC_PROJECT_FEATURE_CTSREG_AT
+    bool "AT of CTSREG enabled"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET
+    depends on QUEC_PROJECT_FEATURE_NW
+    depends on QUEC_PROJECT_FEATURE_HTTP
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_CTSREG
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y
+
+config QUEC_PROJECT_FEATURE_GPIO_AT
+    bool "AT of GPIO enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT    
+	depends on QUEC_PROJECT_FEATURE_GPIO
+    default y
+
+config QUEC_PROJECT_FEATURE_ADC_AT
+    bool "AT of ADC enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT    
+	depends on QUEC_PROJECT_FEATURE_ADC
+ 	default n if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_LEDCFG_AT
+    bool "AT of LEDCFG enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT    
+	depends on QUEC_PROJECT_FEATURE_LEDCFG
+    default n if QL_OPEN_EXPORT_PKG
+	default y
+
+config QUEC_PROJECT_FEATURE_LBS_AT
+    bool "AT of LBS enabled"
+	depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_FEATURE_NW
+	depends on QUEC_PROJECT_FEATURE_SOCKET  
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT      
+    depends on QUEC_PROJECT_FEATURE_LBS
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y
+	
+config QUEC_PROJECT_FEATURE_MMS_AT
+    bool "AT of MMS enabled"
+	depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_FEATURE_NW
+	depends on QUEC_PROJECT_FEATURE_SOCKET  
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT      
+    depends on QUEC_PROJECT_FEATURE_MMS
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y	
+
+config QUEC_PROJECT_FEATURE_MQTT_AT
+    bool "AT of MQTT enabled"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT    
+    depends on QUEC_PROJECT_FEATURE_MQTT   
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y
+
+config QUEC_PROJECT_FEATURE_NW_AT
+    bool "AT of NW enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT    
+    depends on QUEC_PROJECT_FEATURE_NW
+    default y
+
+config QUEC_PROJECT_FEATURE_TCPIP_AT
+    bool "AT of TCPIP enabled"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET    
+	depends on QUEC_PROJECT_ATCMD_APP_SUPPORT    
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y
+
+config QUEC_PROJECT_FEATURE_NTP_AT
+    bool "AT of NTP enabled"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET  
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT  
+	depends on QUEC_PROJECT_FEATURE_TCPIP_AT
+    depends on QUEC_PROJECT_FEATURE_NTP      
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y
+
+config QUEC_PROJECT_FEATURE_SNMP_AT
+    bool "AT of SNMP enabled"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET  
+              depends on QUEC_PROJECT_ATCMD_APP_SUPPORT  
+              depends on QUEC_PROJECT_FEATURE_SNMP      	
+    default n
+
+config QUEC_PROJECT_FEATURE_PING_AT
+    bool "AT of PING enabled"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_DNS  
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT   
+	depends on QUEC_PROJECT_FEATURE_TCPIP_AT
+    depends on QUEC_PROJECT_FEATURE_PING    
+    default y
+
+config QUEC_PROJECT_FEATURE_FIREWALL_AT
+	bool "AT of FIREWALL enabled"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_FIREWALL
+	default y
+
+config QUEC_PROJECT_FEATURE_SIM_AT
+    bool "AT of SIM enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT      
+    depends on QUEC_PROJECT_FEATURE_SIM    
+    default y
+
+config QUEC_PROJECT_FEATURE_QVSIM_AT
+    bool "AT of QVSIM enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_QVSIM
+    default n if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_QESIM_AT
+    bool "AT of QESIM enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_QESIM
+    default n if QL_OPEN_EXPORT_PKG
+    default n
+
+config QUEC_PROJECT_FEATURE_SMS_AT
+    bool "AT of SMS enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT   
+	depends on QUEC_PROJECT_FEATURE_SMS
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y
+
+config QUEC_PROJECT_FEATURE_PBK_AT
+    bool "AT of PBK enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT   
+	depends on QUEC_PROJECT_FEATURE_PBK
+    default n   if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_STK_AT
+    bool "AT of stk enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_STK
+    default n   if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_BIP_AT
+    bool "AT of bip enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_BIP
+    default n   if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_SSL_AT
+    bool "AT of SSL enabled"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_ATCMD_APP_SUPPORT   
+ 	depends on QUEC_PROJECT_FEATURE_SOCKET    
+	depends on QUEC_PROJECT_FEATURE_TCPIP_AT
+    depends on QUEC_PROJECT_FEATURE_SSL
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default y
+
+config QUEC_PROJECT_FEATURE_WIFISCAN_AT
+    bool "AT of WIFISCAN enabled"
+	depends on QUEC_PROJECT_FEATURE    
+	depends on QUEC_PROJECT_ATCMD_APP_SUPPORT    
+	depends on QUEC_PROJECT_FEATURE_WIFISCAN 
+ 	default n if QL_OPEN_EXPORT_PKG	 
+    default y
+
+config QUEC_PROJECT_FEATURE_FOTA_AT
+    bool "AT of FOTA enabled"
+	depends on QUEC_PROJECT_FEATURE    
+	depends on QUEC_PROJECT_FEATURE_FOTA   
+	depends on QUEC_PROJECT_ATCMD_APP_SUPPORT  
+	default n	if QL_OPEN_EXPORT_PKG
+    default y
+	
+config QUEC_PROJECT_FEATURE_QCFG_AT
+    bool "AT of QCFG enabled"
+	depends on QUEC_PROJECT_FEATURE    
+	depends on QUEC_PROJECT_ATCMD_APP_SUPPORT  
+    default y
+
+config QUEC_PROJECT_FEATURE_QDBGCFG_AT
+    bool "AT of QDBGCFG enabled"
+	depends on QUEC_PROJECT_FEATURE    
+	depends on QUEC_PROJECT_ATCMD_APP_SUPPORT  
+    default y
+
+config QUEC_PROJECT_FEATURE_LWM2M_AT
+    bool "AT of LWM2M enabled"
+	depends on QUEC_PROJECT_FEATURE    
+	depends on QUEC_PROJECT_FEATURE_LWM2M
+	depends on QUEC_PROJECT_ATCMD_APP_SUPPORT  
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default n
+
+config QUEC_PROJECT_FEATURE_PDP_KALIVE
+    bool "AT of pdp keepalive enabled"
+	depends on QUEC_PROJECT_FEATURE    
+	depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+	default n	if QL_OPEN_EXPORT_PKG
+    default y
+config QUEC_PROJECT_FEATURE_KEEPALIVE_RETRANT
+    bool "AT of pdp keepalive RETRANT enabled"
+	depends on QUEC_PROJECT_FEATURE    
+	depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+	default n	if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_RFTEST_AT
+    bool "AT of RFTEST enabled"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_RFTEST
+    default y
+	
+config QUEC_PROJECT_FEATURE_JAMDET_AT
+    bool "AT of Jamming detection enabled"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_JAMDET
+    default n if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_CAMERA_AT
+    bool "AT of CAMERA enabled"
+	depends on QUEC_PROJECT_FEATURE    
+	depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_CAMERA
+	default n	if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_USB_MODEM_AT
+    bool "AT of USB_MODEM_AT enabled"
+    depends on QUEC_PROJECT_FEATURE
+    default y
+		
+config QUEC_PROJECT_FEATURE_USB_NMEA_AT
+    bool "AT of USB_NMEA_AT enabled"
+    depends on QUEC_PROJECT_FEATURE
+    default y
+	
+config QUEC_PROJECT_FEATURE_CTWING_AT
+    bool "AT of CTWING enabled"
+	depends on QUEC_PROJECT_FEATURE_MQTT_AT
+	depends on QUEC_PROJECT_FEATURE_HTTP_AT
+    default n
+
+config QUEC_PROJECT_FEATURE_TCP_WINDOWSIZE_AT
+    bool "AT of tcp windowsize enabled"
+	depends on QUEC_PROJECT_FEATURE    
+	depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_TCPIP_AT  
+	default n	if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_SMTP_AT
+	bool "AT of SMTP enabled"
+	depends on QUEC_PROJECT_FEATURE_SMTP
+	default n if QL_OPEN_EXPORT_PKG
+	default y
+
+config QUEC_PROJECT_FEATURE_DTMF_AT
+    bool "AT of DTMF enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    depends on QUEC_PROJECT_FEATURE_AUDIO
+    depends on QUEC_PROJECT_FEATURE_DTMF
+    default n if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_UNIOT_IDENTITY
+    bool "UNIOT_IDENTITY feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_FEATURE_MQTT
+    default n	
+	
+config QUEC_PROJECT_FEATURE_UNIOT_AT
+    bool "AT of UNIOT feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT 
+    depends on QUEC_PROJECT_FEATURE_MQTT	
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default n
+
+config QUEC_PROJECT_FEATURE_CSDK_VERINFO_AT
+    bool "AT of VERSION Info feature for Quectel CSDK"
+	depends on QUEC_PROJECT_FEATURE
+ 	default y if QL_OPEN_EXPORT_PKG	
+    default n
+	
+config QUEC_PROJECT_FEATURE_HEART_BEAT_AT
+    bool "AT of heart beat enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    default n
+	
+config QUEC_PROJECT_FEATURE_ALIIOTSMARTCARD_AT
+    bool "AT of ALIOT smartcard"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    default n
+
+config QUEC_PROJECT_FEATURE_ALIPAY_IOT_SDK_AT
+    bool "AT of ALIPAY_IOT_SDK feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_ALIPAY_IOT_SDK
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default n
+	
+config QUEC_PROJECT_FEATURE_MAYILIAN_AT
+    bool "AT of mayilian feature for Quectel CSDK"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_MAYILIAN
+ 	default n if QL_OPEN_EXPORT_PKG	
+    default n
+config QUEC_PROJECT_FEATURE_HW_IOT_DEVICE_SDK_AT
+    bool "AT of HW_IOT_DEVICE_SDK feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_HW_IOT_DEVICE_SDK
+    default n
+
+config QUEC_PROJECT_FEATURE_WEBSOCKET_AT
+    bool "AT of heart beat enabled"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+    default n
+
+config QUEC_PROJECT_FEATURE_SS_AT
+	bool "AT of SS feature for Quectel"
+    depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SS
+ 	default n if QL_OPEN_EXPORT_PKG
+	default y
+
+config QUEC_PROJECT_FEATURE_OHOS_AT
+    bool "AT of OHOS AT feature for Quectel"
+    depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_OHOS
+    default n
+
+config QUEC_PROJECT_FEATURE_XLAT_AT
+	bool "AT of PING enabled"
+	depends on QUEC_PROJECT_ATCMD_APP_SUPPORT
+	depends on QUEC_PROJECT_FEATURE_XLAT
+	depends on QUEC_PROJECT_FEATURE
+	default y
+
+endmenu

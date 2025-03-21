@@ -1,0 +1,19 @@
+
+///////////////////////////////////////////// Example /////////////////////////////////////////////
+//quectel update
+#include "atr_config.h"
+#include "hal_config.h"
+#ifdef CONFIG_RF_DELTANV_8910FV
+#include "8910fv_deltanv.nv"
+#endif
+
+#include "delta_base.nv"
+#include "delta_base_common.nv"
+#ifdef CONFIG_SUPPORT_IMS_DELTA_NV
+#include "delta_ims.nv"
+#include "delta_ims_common.nv"
+#endif
+#ifdef CONFIG_DUAL_SIM_SUPPORT
+#include "delta_simcard2.nv"
+#include "delta_simcard2_common.nv"
+#endif

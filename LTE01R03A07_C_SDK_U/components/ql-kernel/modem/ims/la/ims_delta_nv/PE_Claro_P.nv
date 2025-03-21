@@ -1,0 +1,12 @@
+
+///////////////////////////////////////////// IMS /////////////////////////////////////////////
+
+// sip_preconditionEnabled: Control the precondition of all cases.
+PS_NV_PARAMS\NV_PARAM_TYPE_PLMN_DELTA_NV\ims_plmn_nvinfo\sip_preconditionEnabled=1
+
+PS_NV_PARAMS\NV_PARAM_TYPE_PLMN_DELTA_NV\ims_plmn_nvinfo\video_rs=240
+
+PS_NV_PARAMS\NV_PARAM_TYPE_PLMN_DELTA_NV\ims_plmn_nvinfo\video_rr=240
+
+// confSubscribe_inDialog: 1 : When send SUBSCRIBE of confernce in dialog
+PS_NV_PARAMS\NV_PARAM_TYPE_PLMN_DELTA_NV\ims_plmn_nvinfo\confSubscribe_inDialog=1

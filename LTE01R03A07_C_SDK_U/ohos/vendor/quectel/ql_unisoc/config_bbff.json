@@ -1,0 +1,20 @@
+{
+    "product_name": "ql_unisoc",
+    "ohos_version": "OpenHarmony 3.2",
+    "type": "mini",
+    "device_company": "quectel",
+    "board": "ecx00u",
+    "kernel_type": "liteos_m",
+    "kernel_version": "",
+    "kernel_is_prebuilt": true,
+    "subsystems": [
+      {
+        "subsystem": "ql_unisoc",
+        "components": [
+          { "component": "ql_ecx00u_sdk", "target": "//device/quectel/ecx00u/sdk_liteos:board", "features":[] }
+        ]
+      }
+    ],
+    "third_party_dir": "//third_party",
+    "product_adapter_dir": "//vendor/quectel/ql_unisoc/hals"
+}

@@ -1,0 +1,10 @@
+
+static_library("ql_ohos_demo_gpio") {
+  sources = [
+    "ql_ohos_demo_gpio.c",
+  ]
+
+  include_dirs = [
+    "//base/iothardware/peripheral/interfaces/inner_api",
+  ]
+}

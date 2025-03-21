@@ -1,0 +1,15 @@
+这是针对蜂窝类设备通过网络进行绑定模式，[可选集成，与bind_ble互斥]，依赖如下:
+fwk_common
+hal_os
+hal_device_info
+3rdparty_uEcc
+fwk_bind_status
+3rdparty_cJSON
+fwk_crypt
+fwk_secure_mode_se
+hal_se_v1
+fwk_network
+hal_network
+3rdparty_mbedtls
+3rdparty_protobuf-c
+3rdparty_sm3

@@ -1,0 +1,21 @@
+/* Copyright (C) 2020 QUECTEL Technologies Limited and/or its affiliates("QUECTEL").
+ * All rights reserved.
+ */
+ 
+#ifndef _WIFI_DEMO_MACRO_H_
+#define _WIFI_DEMO_MACRO_H_
+
+// @AUTO_GENERATION_NOTICE@
+#ifdef __cplusplus
+extern "C" {
+#endif
+#cmakedefine QL_WIFI_FC41D
+
+#cmakedefine QL_WIFI_FCM360W
+
+#cmakedefine QL_WIFI_FGM842D
+
+#ifdef __cplusplus
+}
+#endif
+#endif

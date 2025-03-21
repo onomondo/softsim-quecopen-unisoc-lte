@@ -1,0 +1,47 @@
+/* Copyright (C) 2018 RDA Technologies Limited and/or its affiliates("RDA").
+ * All rights reserved.
+ *
+ * This software is supplied "AS IS" without any warranties.
+ * RDA assumes no responsibility or liability for the use of the software,
+ * conveys no license or title under any patent, copyright, or mask work
+ * right to the product. RDA reserves the right to make changes in the
+ * software without notification.  RDA also make no representation or
+ * warranty that such application will be suitable for the specified use
+ * without further testing or modification.
+ */
+
+%{
+// NOTE:
+// * Don't change the options
+// * Don't add space around keywords
+// * Each command should be located in a single line
+#include "cfw_config.h"
+#include "atr_config.h"
+#include "ats_config.h"
+#include "kernel_config.h"
+#include "lpa_config.h"
+#include "quec_proj_config.h"
+#include "quec_proj_config_at.h"
+
+%}
+struct ql_at_desc
+%language=ANSI-C
+%ignore-case
+%struct-type
+%omit-struct-type
+%readonly-tables
+%global-table
+%omit-cmp-function
+%omit-lookup-function
+%hash-index
+%switch=1
+%define hash-function-name ql_atCmdNameHash
+%define word-array-name ql_gAtCmdTable
+%define hash-index-name ql_gAtCmdNameHashIndex
+%%
+// V.250
+
+#include "quec_atcmd_def.h"
+#include "quec_atcmd_def_unisoc.h"
+
+%%

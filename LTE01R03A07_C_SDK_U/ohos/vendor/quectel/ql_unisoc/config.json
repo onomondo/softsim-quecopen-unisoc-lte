@@ -1,0 +1,70 @@
+{
+    "product_name": "ql_unisoc",
+    "ohos_version": "OpenHarmony 3.2",
+    "type": "mini",
+    "device_company": "quectel",
+    "board": "ecx00u",
+    "kernel_type": "liteos_m",
+    "kernel_version": "",
+    "kernel_is_prebuilt": true,
+    "subsystems": [
+      {
+        "subsystem": "iothardware",
+        "components": [
+          { "component": "peripheral", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "ql_unisoc",
+        "components": [
+          { "component": "ql_ecx00u_sdk", "target": "//device/quectel/ecx00u/sdk_liteos:board", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "commonlibrary",
+        "components": [
+           { "component": "file", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "hiviewdfx",
+        "components": [
+          { "component": "hilog_lite", "features":[] },
+          { "component": "hievent_lite", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "systemabilitymgr",
+        "components": [
+          { "component": "samgr_lite", "features":[
+            "config_ohos_systemabilitymgr_samgr_lite_shared_task_size = 4096"
+          ] }
+        ]
+      },
+      {
+        "subsystem": "startup",
+        "components": [
+          { "component": "bootstrap_lite", "features":[] },
+          { "component": "syspara_lite", "features":[
+            "enable_ohos_startup_init_lite_use_posix_file_api = false"
+          ] }
+        ]
+      },
+      {
+        "subsystem": "applications",
+        "components": [
+          { "component": "ql_ohos_app", "features":[] }
+         ]
+      },
+      {
+        "subsystem": "xts",
+        "components": [
+          { "component": "xts_acts", "features":[
+            "build_xts=true"
+          ] }
+         ]
+      }
+    ],
+    "third_party_dir": "//third_party",
+    "product_adapter_dir": "//vendor/quectel/ql_unisoc/hals"
+}

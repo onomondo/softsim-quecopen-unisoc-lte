@@ -1,0 +1,36 @@
+{
+    "name": "@ohos/ql_ecx00u_sdk",
+    "description": "ql ecx00u sdk",
+    "version": "3.2",
+    "license": "MIT",
+    "publishAs": "code-segment",
+    "segment": {
+      "destPath": "//device/quectel/ecx00u/sdk_liteos"
+    },
+    "dirs": {},
+    "scripts": {},
+    "component": {
+      "name": "ql_ecx00u_sdk",
+      "subsystem": "ql_unisoc",
+      "syscap": [""],
+      "adapter_system_type": ["mini"],
+      "rom": "1024KB",
+      "ram": "1024KB",
+      "deps": {
+        "components": [
+          "utils_base"
+        ],
+        "third_party": [
+        ]
+      },
+      "build": {
+        "sub_component": [
+          "//device/quectel/ecx00u/sdk_liteos:board"
+        ],
+        "test": [
+        ],
+        "inner_kits": [
+        ]
+      }
+    }
+  }

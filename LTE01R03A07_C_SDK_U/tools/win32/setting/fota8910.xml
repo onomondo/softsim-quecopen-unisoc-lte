@@ -1,0 +1,139 @@
+<!--
+Copyright (C) 2018 RDA Technologies Limited and/or its affiliates("RDA").
+All rights reserved.
+
+This software is supplied "AS IS" without any warranties.
+RDA assumes no responsibility or liability for the use of the software,
+conveys no license or title under any patent, copyright, or mask work
+right to the product. RDA reserves the right to make changes in the
+software without notification.  RDA also make no representation or
+warranty that such application will be suitable for the specified use
+without further testing or modification.
+-->
+
+<!--
+Most likely the configuration is suitable. And it can be changed if needed.
+
+Method is patch method fine tune. The default method is "diff":
+* diff: (default option) create differential patch
+* ignore: not touch the file
+* remove: remove the file forcedly
+* replace: remove the file if exists, and insert with new content
+-->
+
+<pacdiff>
+    <!-- The files list need to clean. It's disabled by default.
+    WARNING: Please double check the file list and make sure what you are doing
+    is to delete the files in the device. The device will work abnormal if
+    you delete some important files.
+
+    It can be ignored if you have no requirement of this part.
+    -->
+    <pacclean id="FILELIST">
+        <!--
+            <file name="thirdpart/abc.mp3"/>
+        -->
+    </pacclean>
+    <!-- The default AP application ID is "AP", and it runs on FLASH. -->
+    <pacflash id="AP" flash="SFL1" blocksize="0x10000" bundleblock="0" method="diff"/>
+	
+	<!-- quectel update -->
+	<!-- The default APPIMG application ID is "APPIMG", and it runs on FLASH or EXT FLASH. -->
+	<!-- if APPIMG is configured in partinfo json file as flash, and it runs on FLASH. -->
+	<pacflash id="APPIMG" flash="SFL1" blocksize="0x10000" bundleblock="0" method="diff"/>
+	<!-- if APPIMG is configured in partinfo json file as ext flash, and it runs on EXT FLASH. -->
+	<!--<pacflash id="APPIMG" flash="SFL2" blocksize="0x10000" bundleblock="0" method="diff"/> -->
+	
+	<!-- The default AP application2 ID is "AP2", and it runs on EXT FLASH. -->
+	<pacflash id="AP2" flash="SFL2" blocksize="0x10000" bundleblock="0" method="diff"/>
+	
+	<!-- The default APP application2 ID is "APPIMG2", and it runs on EXT FLASH. -->
+	<pacflash id="APPIMG2" flash="SFL2" blocksize="0x10000" bundleblock="0" method="diff"/>
+    <!--
+        The default modem image ID is "PS". It is a SFFS image.
+        threshold is the alert value of the modem sffs image available size.
+        The fota pack generation will fail if the modem image available size 
+        is less than threshold value.
+        It can be set to 0x0 if not want to check the modem image available size.
+        The default threshold value is 65535.
+    -->
+    <pacsffs id="PS" ebsize="0x10000" pbsize="0x200" mount="/modem" method="diff" savespace="y" threshold="0x10000">
+        <!--
+            <file name="nvm/audio_calib.bin" method="ignore"/>
+        -->
+        <!-- <file name="nvm/ims_delta_nv.bin" method="ignore"/> -->
+        <file name="nvm/bt_config.bin" method="ignore"/>
+    </pacsffs>
+    <!--
+        NV will be updated inside modem image. The following are only
+        describing clear running NV rules.
+
+        * always clear running NV:
+                <cleanrunning onchange="always"/>
+        * never clear running NV:
+                <cleanrunning onchange="never"/>
+        * clear running NV on any listed NV changes:
+                <cleanrunning onchange="any"/>
+        * clear running NV when either 0x123 or 0x456 is changed:
+                <cleanrunning onchange="0x123"/>
+                <cleanrunning onchange="0x456"/>
+    -->
+    <pacnv id="NV">
+        <nvitem id="0x191" runningnv="/modemnvm/bt_config.bin">
+            <cleanrunning onchange="never"/>
+        </nvitem>
+        <nvitem id="0x1ba" runningnv="/modemnvm/bt_sprd.bin">
+            <cleanrunning onchange="0x1ba"/>
+        </nvitem>
+        <nvitem id="0x259" runningnv="/modemnvm/static_nv.bin">
+            <cleanrunning onchange="any"/>
+        </nvitem>
+        <nvitem id="0x25a" runningnv="/modemnvm/phy_nv.bin">
+            <cleanrunning onchange="any"/>
+        </nvitem>
+        <nvitem id="0x25b" runningnv="/modemnvm/dynamic_nv.bin">
+            <cleanrunning onchange="any"/>
+        </nvitem>
+        <nvitem id="0x25c" runningnv="/modemnvm/static_nv_2.bin">
+            <cleanrunning onchange="any"/>
+        </nvitem>
+        <nvitem id="0x25d" runningnv="/modemnvm/phy_nv_2.bin">
+            <cleanrunning onchange="any"/>
+        </nvitem>
+        <nvitem id="0x25e" runningnv="/modemnvm/dynamic_nv_2.bin">
+            <cleanrunning onchange="any"/>
+        </nvitem>
+        <nvitem id="0x26c" runningnv="/modemnvm/rf_nv.bin">
+            <cleanrunning onchange="any"/>
+        </nvitem>
+        <nvitem id="0x277" runningnv="/modemnvm/cfw_nv.bin">
+            <cleanrunning onchange="0x277"/>
+        </nvitem>
+        <nvitem id="0x278" runningnv="/modemnvm/audio_calib.bin">
+            <cleanrunning onchange="0x278"/>
+        </nvitem>
+        <nvitem id="0x279" runningnv="/modemnvm/phy_nv_catm.bin">
+            <cleanrunning onchange="any"/>
+        </nvitem>
+        <nvitem id="0x27a" runningnv="/modemnvm/audio_codec_nv.bin">
+            <cleanrunning onchange="0x27a"/>
+        </nvitem>
+		<nvitem id="0x870" runningnv="/modemnvm/sim_delta_nv.bin">
+            <cleanrunning onchange="0x870"/>
+        </nvitem>
+		<nvitem id="0x871" runningnv="/modemnvm/sim_delta_nv_card2.bin">
+            <cleanrunning onchange="0x871"/>
+        </nvitem>
+    </pacnv>
+	
+	<paccpio id="INDELTANV" method="diff">
+	</paccpio>
+	
+    <paccpio id="PREPACK" method="diff">
+        <file name="qsfs/quectel_pcm_resource.bin" method="ignore"/>
+		<file name="qsfs/quectel_pcm_resource_00.bin" method="ignore"/>
+		<file name="qsfs/quectel_pcm_resource_01.bin" method="ignore"/>
+		<file name="qsfs/quectel_pcm_resource_02.bin" method="ignore"/>
+		<file name="qsfs/quectel_pcm_resource_ff.bin" method="ignore"/>
+    </paccpio>
+</pacdiff>

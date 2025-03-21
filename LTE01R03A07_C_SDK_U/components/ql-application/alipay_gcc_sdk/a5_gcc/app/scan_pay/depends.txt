@@ -1,0 +1,17 @@
+这是主扫支付模块，仅对支持蜂窝网络和后置摄像头的设备支持[可选集成]，依赖如下:
+fwk_common
+hal_os
+hal_device_info
+3rdparty_uEcc
+fwk_bind_status
+3rdparty_cJSON
+fwk_crypt
+fwk_secure_mode_se
+hal_se_v1
+fwk_network
+hal_network
+3rdparty_mbedtls
+3rdparty_protobuf-c
+3rdparty_sm3
+3rdparty_qr_decoder
+3rdparty_regex

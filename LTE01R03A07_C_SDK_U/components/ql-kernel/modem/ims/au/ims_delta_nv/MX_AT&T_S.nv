@@ -1,0 +1,51 @@
+
+///////////////////////////////////////////// IMS /////////////////////////////////////////////
+// audioRtpTimeout: Seconds. Call will be disconnected if not receive audio RTP before expire
+PS_NV_PARAMS\NV_PARAM_TYPE_SIM_DELTA_NV\ims_sim_nvinfo\audioRtpTimeout=20
+
+// MT call no answer timer after send 180 (Sec)
+PS_NV_PARAMS\NV_PARAM_TYPE_SIM_DELTA_NV\ims_sim_nvinfo\RingingTimer=60
+
+// MO call no answer timer after receive 180 (Sec)
+PS_NV_PARAMS\NV_PARAM_TYPE_SIM_DELTA_NV\ims_sim_nvinfo\RingbackTimer=60
+
+// sip_timerTcall: INVITE no response (100) expire time, in ms
+PS_NV_PARAMS\NV_PARAM_TYPE_SIM_DELTA_NV\ims_sim_nvinfo\sip_timerTcall=11000
+
+// service_natUrlFmt: National URL format: 0:TEL; 1:SIP
+PS_NV_PARAMS\NV_PARAM_TYPE_SIM_DELTA_NV\ims_sim_nvinfo\service_natUrlFmt=1
+
+// service_intUrlFmt: International URL format: 0:TEL; 1:SIP
+PS_NV_PARAMS\NV_PARAM_TYPE_SIM_DELTA_NV\ims_sim_nvinfo\service_intUrlFmt=1
+
+// sip_preconditionEnabled: Control the precondition of all cases.
+PS_NV_PARAMS\NV_PARAM_TYPE_PLMN_DELTA_NV\ims_plmn_nvinfo\sip_preconditionEnabled=1
+
+//The Conference server URI.
+//If not set, UE will generate one according to TS23.003 with format:
+//  sip:mmtel@conf-factory.[domain]
+PS_NV_PARAMS\NV_PARAM_TYPE_SIM_DELTA_NV\ims_sim_nvinfo\conf_uri="sip:ALU_CONF@ims.attmex.mx"
+
+//The XCAP server URI.
+//If not set, UE will generate one according to TS23.003 with format:
+//  xcap.mnc***.mcc###.pub.3gppnetwork.org:[ss_XcapPort]
+PS_NV_PARAMS\NV_PARAM_TYPE_SIM_DELTA_NV\ims_sim_nvinfo\ss_XcapUri="xcap.ims.attmex.mx"
+
+//The BSF server URI.
+//If not set, UE will generate one according to TS23.003 with format:
+//  bsf.mnc***.mcc###.pub.3gppnetwork.org:[ss_BsfPort]
+PS_NV_PARAMS\NV_PARAM_TYPE_SIM_DELTA_NV\ims_sim_nvinfo\ss_BsfUri="bsf.ims.attmex.mx"
+
+
+///////////////////////////////////////////// GAS /////////////////////////////////////////////
+
+
+///////////////////////////////////////////// LAS /////////////////////////////////////////////
+
+
+///////////////////////////////////////////// WAS /////////////////////////////////////////////
+
+
+///////////////////////////////////////////// MN //////////////////////////////////////////////
+PS_NV_PARAMS\NV_PARAM_TYPE_SIM_DELTA_NV\mn_sim_nvinfo\cs_ecc_only=0x1
+PS_NV_PARAMS\NV_PARAM_TYPE_SIM_DELTA_NV\mn_sim_nvinfo\ss_domain=0x2

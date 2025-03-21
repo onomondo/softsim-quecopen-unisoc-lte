@@ -1,0 +1,12 @@
+import("//build/lite/config/component/lite_component.gni")
+
+static_library("cmsis") {
+  sources = [ "ql_ohos_cmsis.c" ]
+
+  include_dirs = [
+    "//device/unisoc/quectel_ec600u/8910dm_adapter/kal/cmsis",
+    "//third_party/bounds_checking_function/include",
+  ]
+
+  cflags = [ "-Wno-error" ]
+}

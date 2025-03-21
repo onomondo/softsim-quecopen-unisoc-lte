@@ -1,0 +1,47 @@
+# Copyright (c) Huawei Technologies Co., Ltd. 2020. All rights reserved.
+#导入两个GNI
+import("//build/lite/config/component/lite_component.gni")
+import("//build/lite/config/subsystem/lite_subsystem.gni")
+
+lite_subsystem("board") {
+  subsystem_components = [ ":sdk" ]
+}
+
+action("jamie_test")
+{
+  deps = []
+  args = []
+
+  # 输出 GN 版本信息
+  print("GN version is: " + gn_version)
+
+  print("test++++++++++++++++++++++++:")
+
+  script = "//ql_app/tools/test.py"
+  outputs = ["$target_out_dir/ql_app/tools/test.txt"]
+}
+
+build_ext_component("quectel_build_ready") {
+    exec_path = rebase_path("//../")
+
+    # 获取当前 GN 项目的根目录路径
+    ql_project_root = rebase_path("//")
+    print("jamie:ql_project_root:${ql_project_root}")
+
+    command = "python ${ql_ohos_ql_sdk_topdir}/ohos/ql_ohos/tools/build_ohos.py ohos_args --ohos_top_dir ${ql_project_root} --board_name ${board_name} --product_name ${ql_ohos_product_name}"
+    print("jamie:command:${command}")
+
+    deps = [
+    ":sdk",
+    "//build/lite:ohos",
+    ]
+}
+
+lite_component("sdk") {
+  features = []
+
+  deps = [
+    "//build/lite/config/component/cJSON:cjson_static",
+    "//third_party/bounds_checking_function:libsec_static",
+  ]
+}

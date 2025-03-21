@@ -1,0 +1,30 @@
+{
+    "name": "@ohos/ql_ohos_app",
+    "description": "ql_ohos_app",
+    "version": "3.2",
+    "license": "Apache License 2.0",
+    "publishAs": "code-segment",
+    "segment": {
+        "destPath": "applications/ql_ohos_app"
+    },
+    "dirs": {},
+    "scripts": {},
+    "component": {
+        "name": "ql_ohos_app",
+        "subsystem": "applications",
+        "syscap": [],
+        "features": [],
+        "adapted_system_type": ["liteos_m"],
+        "rom": "",
+        "ram": "",
+        "deps": {
+            "components": [],
+            "third_party": []
+        },
+        "build": {
+            "sub_component": ["//applications/ql_ohos_app:ql_ohos_demo"],
+            "inner_kits": [],
+            "test": []
+        }
+    }
+}

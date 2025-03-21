@@ -1,0 +1,31 @@
+{
+    "auth_mode":"KEY",
+
+    "productId":"KSS57PUDXP",
+    "productSecret":"qatTLzw7493NODafMmNNttoU",
+    "deviceName":"Smart_light_01",
+
+    "key_deviceinfo":{    
+        "deviceSecret":"0TJoksp0+vkWMr1qSAR7ow=="
+    },
+
+    "cert_deviceinfo":{
+        "devCertFile":"./certs/Smart_light_01_cert.crt",
+        "devPrivateKeyFile":"./certs/Smart_light_01_private.key"
+    },
+
+    "subDev":{
+        "subdev_num":6,
+        "subdev_list":
+        [
+                {"sub_productId": "WPDA0S6S08", "sub_devName": "dev001"},
+                {"sub_productId": "WPDA0S6S08", "sub_devName": "dev002"},
+                {"sub_productId": "WPDA0S6S08", "sub_devName": "dev003"},
+                {"sub_productId": "Y8T6NB8DM0", "sub_devName": "test001"},
+                {"sub_productId": "Y8T6NB8DM0", "sub_devName": "test002"},
+                {"sub_productId": "Y8T6NB8DM0", "sub_devName": "test003"}               
+        ]     
+    },
+	
+    "region":"china"
+}

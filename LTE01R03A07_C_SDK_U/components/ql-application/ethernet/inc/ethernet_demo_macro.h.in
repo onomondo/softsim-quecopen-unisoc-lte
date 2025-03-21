@@ -1,0 +1,17 @@
+/* Copyright (C) 2020 QUECTEL Technologies Limited and/or its affiliates("QUECTEL").
+ * All rights reserved.
+ */
+ 
+#ifndef _ETHERNET_DEMO_MACRO_H_
+#define _ETHERNET_DEMO_MACRO_H_
+
+// @AUTO_GENERATION_NOTICE@
+#ifdef __cplusplus
+extern "C" {
+#endif
+#cmakedefine ETHERNET_PHY_CH395
+
+#ifdef __cplusplus
+}
+#endif
+#endif

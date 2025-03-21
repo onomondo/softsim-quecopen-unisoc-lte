@@ -1,0 +1,8 @@
+import("//build/lite/config/component/lite_component.gni")
+
+lite_component("kal") {
+  features = [
+    #"posix",
+    "cmsis",
+  ]
+}

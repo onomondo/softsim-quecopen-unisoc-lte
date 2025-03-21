@@ -1,0 +1,1049 @@
+# Copyright (C) 2020 Quectel.
+# All rights reserved.
+#
+
+menu "quectel  customize"
+
+config QUEC_PROJECT_FEATURE
+    bool "Specify feature for Quectel"
+    default y
+
+config QUEC_PROJECT_AT_CUT
+    bool "Specify at cut for Quectel"
+    default n
+	
+config QL_PROJECT_DEF
+    string "Specify Project Name for Quectel"
+    default ""
+	
+config QL_PROJECT_DEF_SUB
+    string "Specify Project Sub Name for Quectel"
+    default ""
+
+config QL_OPEN_EXPORT_PKG
+    bool "export Quectel OPEN CPU package"
+    default n
+
+config QUEC_BUILD_IN_CSDK
+    bool "build in CSDK"
+    default n
+	
+config QUEC_UNISOC_BASELINE_CODE_891014
+    bool
+
+config QUEC_UNISOC_BASELINE_CODE_891015
+    bool
+    default y
+
+config QUEC_UNISOC_BASELINE_CODE_891016
+    bool
+    imply QUEC_UNISOC_NEW_BASELINE
+
+config QUEC_UNISOC_BASELINE_CODE_885010
+    bool
+    imply QUEC_UNISOC_NEW_BASELINE
+
+config QUEC_UNISOC_BASELINE_CODE_885011
+    bool
+    imply QUEC_UNISOC_NEW_BASELINE
+
+config QUEC_UNISOC_NEW_BASELINE
+    bool "Used to identify breaking changes to the UNISOC baseline"
+
+config QUEC_PROJECT_FEATURE_SDMMC
+	bool "SDMMC feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on FS_MOUNT_SDCARD
+	depends on SDMMC_SUPPORT	
+	default y
+
+config QUEC_PROJECT_FEATURE_EMMC
+    bool "EMMC feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SDMMC
+    default y
+	
+config QUEC_PROJECT_FEATURE_FILE
+    bool "FILE feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+	
+config QUEC_PROJECT_FEATURE_FILE_ZIP
+	bool "FILE_ZIP feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_FILE
+	default n	
+
+config QUEC_PROJECT_FEATURE_NETIF
+    bool "NETIF feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_FEATURE_PPP
+    bool "PPP feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+
+# protocol stack START
+config QUEC_PROJECT_FEATURE_LWIP
+	bool "LWIP feature for Quectel"
+	default y
+
+config QUEC_PROJECT_FEATURE_CURL
+    bool "CURL feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_FEATURE_SOCKET
+    bool "SOCKET feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_FEATURE_DNS
+    bool "DNS feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET
+    default y
+
+config QUEC_PROJECT_FEATURE_PING
+    bool "PING feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_DNS
+    default y
+
+config QUEC_PROJECT_FEATURE_HTTP
+    bool "HTTP feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET
+	depends on QUEC_PROJECT_FEATURE_DNS
+    default y
+
+config QUEC_PROJECT_FEATURE_DMHTTP
+    bool "DMHTTP feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET
+	depends on QUEC_PROJECT_FEATURE_DNS
+    default n
+
+config QUEC_PROJECT_FEATURE_CTSREG
+    bool "CTSREG feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET
+	depends on QUEC_PROJECT_FEATURE_HTTP
+    default n
+
+config QUEC_PROJECT_FEATURE_MMS
+    bool "MMS feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET
+	depends on QUEC_PROJECT_FEATURE_HTTP
+	default n if QL_OPEN_EXPORT_PKG
+    default y
+	
+config QUEC_PROJECT_FEATURE_MQTT
+    bool "MQTT feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET
+    default y
+
+config QUEC_PROJECT_FEATURE_FIREWALL
+	bool "FIREWALL feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	default n if QL_OPEN_EXPORT_PKG
+    default n
+
+config QUEC_PROJECT_FEATURE_FTP
+    bool "FTP feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET
+	depends on QUEC_PROJECT_FEATURE_CURL
+    default y
+
+config QUEC_PROJECT_FEATURE_SSL
+    bool "SSL feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET
+    default y
+
+config QUEC_PROJECT_FEATURE_TLV
+    bool "TLV feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SSL
+    default y
+
+config QUEC_PROJECT_FEATURE_LBS
+    bool "LBS feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET
+	depends on QUEC_PROJECT_FEATURE_HTTP
+	depends on QUEC_PROJECT_FEATURE_TLV
+    default n if QL_OPEN_EXPORT_PKG
+	default y
+
+config QUEC_PROJECT_FEATURE_LWM2M
+    bool "LWM2M feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET
+	default n if QUEC_PROJECT_FEATURE_QUECOS
+    default n
+
+config QUEC_PROJECT_FEATURE_NTP
+    bool "NTP feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET
+    default y
+
+config QUEC_PROJECT_FEATURE_SNMP
+    bool "SNMP feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET
+    default n
+
+config QUEC_PROJECT_FEATURE_FOTA
+    bool "FOTA feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_FEATURE_NW
+    bool "network feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_FEATURE_USBNET
+    bool "USBNET feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_NETIF
+    default n if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_SMS
+    bool "SMS feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_FEATURE_SIM
+    bool "SIM feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_FEATURE_VSIM_ADAPT
+    bool "VSIM adapt feature for Quectel"
+    depends on QUEC_PROJECT_FEATURE
+    default n
+
+config QUEC_PROJECT_FEATURE_VSIM_ADAPT_STD
+    bool "VSIM image builded as single app image or not"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_FEATURE_VSIM_ADAPT
+    default n
+
+config QUEC_PROJECT_FEATURE_QVSIM
+    bool "QVSIM feature for Quectel"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_FEATURE_VSIM_ADAPT_STD
+    default n
+
+config QUEC_PROJECT_FEATURE_QESIM
+    bool "ESIM feature for Quectel"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_FEATURE_HTTP
+    depends on QUEC_PROJECT_FEATURE_VIRT_AT
+    default n
+
+config QUEC_PROJECT_FEATURE_VOICE_CALL
+    bool "Voice Call feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+	
+config QUEC_PROJECT_FEATURE_VOLTE
+    bool "VoLTE feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_FEATURE_BT
+    bool "BT feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on BLUEU_BT_ENABLE
+    default y
+	
+config QUEC_PROJECT_FEATURE_BLE_GATT
+    bool "BLE GATT feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_BT
+    default y
+
+config QUEC_PROJECT_FEATURE_BT_SDP
+    bool "BT SDP feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_BT
+    default y
+
+config QUEC_PROJECT_FEATURE_BT_HFP
+    bool "BT HFP feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_BT
+    depends on QUEC_PROJECT_FEATURE_BT_SDP
+    default y
+
+config QUEC_PROJECT_FEATURE_BT_HFP_AG
+    bool "BT HFP AG feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_BT
+    depends on QUEC_PROJECT_FEATURE_BT_SDP
+    depends on QUEC_PROJECT_FEATURE_BT_HFP
+    default n
+	
+config QUEC_PROJECT_FEATURE_BT_SPP
+    bool "BT SPP feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_BT
+    depends on QUEC_PROJECT_FEATURE_BT_SDP
+    default y
+	
+config QUEC_PROJECT_FEATURE_BT_A2DP_AVRCP
+    bool "BT A2DP & AVRCP feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_BT
+    depends on QUEC_PROJECT_FEATURE_BT_SDP
+    default n if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_BT_A2DP_AVRCP_SRC
+    bool "BT A2DP & AVRCP SRC feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_BT
+    depends on QUEC_PROJECT_FEATURE_BT_SDP
+    depends on QUEC_PROJECT_FEATURE_BT_A2DP_AVRCP
+    default n
+
+config QUEC_PROJECT_FEATURE_WIFISCAN
+    bool "WIFISCAN feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on WCN_WIFI_SCAN_SUPPORT
+    default y
+	
+config QUEC_PROJECT_FEATURE_GNSS
+    bool "GNSS feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_UART
+    default y
+	
+config QUEC_PROJECT_FEATURE_GNSS_EU
+    bool "GNSS_EU feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_GNSS
+    default n
+	
+config QUEC_PROJECT_FEATURE_RTK
+    bool "RTK feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_GNSS
+    default n
+
+config QUEC_PROJECT_FEATURE_LCD
+    bool "LCD feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	default y if LCD_SUPPORT
+    default n
+
+config QUEC_PROJECT_FEATURE_MIPI_LCD
+    bool "MIPI LCD feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default n
+
+config QUEC_APP_MIPI_LCD_RAM_SIZE
+    hex "Reserved RAM size for quectel application MIPI LCD picture"
+    default 0x0000
+    
+config QUEC_PROJECT_FEATURE_CAMERA
+    bool "CAMERA feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y if QL_OPEN_EXPORT_PKG
+    default n
+
+config QUEC_PROJECT_FEATURE_SPI
+    bool "SPI feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+	
+config QUEC_PROJECT_FEATURE_SPI_FLASH
+    bool "SPI FLASH feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SPI
+    default y
+	
+config QUEC_PROJECT_FEATURE_SPI_NOR_FLASH
+    bool "SPI_NOR_FLASH feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SPI
+	depends on QUEC_PROJECT_FEATURE_SPI_FLASH
+    default y
+
+config QUEC_PROJECT_FEATURE_SPI_NAND_FLASH
+    bool "SPI_NAND_FLASH feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SPI
+	depends on QUEC_PROJECT_FEATURE_SPI_FLASH
+    default y
+	
+config QUEC_PROJECT_FEATURE_SPI6_NAND_FLASH
+    bool "SPI6_NAND_FLASH feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default n
+	
+config QUEC_PROJECT_FEATURE_SPI4_EXT_NOR_SFFS
+    bool "Spi6 ext nor feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SPI
+	depends on QUEC_PROJECT_FEATURE_SPI_FLASH
+	depends on QUEC_PROJECT_FEATURE_SPI_NOR_FLASH
+    default n if QL_OPEN_EXPORT_PKG
+    default n
+	
+config QUEC_PROJECT_FEATURE_UART
+    bool "UART feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_FEATURE_LEDCFG
+    bool "LEDCFG feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_NW
+    default y
+
+config QUEC_PROJECT_FEATURE_GPIO
+    bool "GPIO feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_FEATURE_ADC
+    bool "ADC feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_FEATURE_PWK
+    bool "Power Key feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_FEATURE_SLEEP
+    bool "SLEEP feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_FEATURE_I2C
+    bool "I2C feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+	
+config QUEC_PROJECT_FEATURE_KEYPAD
+    bool "KEYPAD feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y	
+	
+config QUEC_PROJECT_FEATURE_DECODER_STD
+    bool "DECODER feature for Quectel std project"
+	depends on QUEC_PROJECT_FEATURE
+    default n
+
+config QUEC_PROJECT_FEATURE_AUDIO
+    bool "AUDIO feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+
+
+config QUEC_PROJECT_FEATURE_AUDIO_DEC_AAC
+    bool "AAC feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_AUDIO
+    default n
+
+config QUEC_PROJECT_FEATURE_AUDIO_RECORD
+	bool "AUDIO RECORD feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_AUDIO
+    default y
+	
+config QUEC_PROJECT_FEATURE_TTS
+    bool "AUDIO TTS feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_AUDIO
+    default y
+
+config QUEC_PROJECT_FEATURE_TTS_IN_KERNEL
+    bool "AUDIO TTS feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_AUDIO
+	depends on QUEC_PROJECT_FEATURE_TTS
+    default n
+	
+config QUEC_PROJECT_FEATURE_URC
+    bool "URC feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_UART
+    default y	
+	
+config QUEC_PROJECT_FEATURE_SECURE_BOOT
+    bool "Secure Boot feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default n
+
+config QUEC_PROJECT_FEATURE_USB_SUSPEND
+    bool "USB Suspend feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_FEATURE_SPI6_EXT_NOR
+    bool "Spi6 ext nor feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y if QL_OPEN_EXPORT_PKG
+    default n
+	
+config QUEC_PROJECT_FEATURE_EXT_CODEC
+    bool "ext codec feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_I2C
+    default y
+	
+config QUEC_PROJECT_FEATURE_BOOT_SPI_FLASH
+    bool "Boot SPI Flash feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default n
+
+config QUEC_PROJECT_FEATURE_BOOT_LCD
+    bool "Boot SPI Flash feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_LCD
+    default n
+	
+config QUEC_PROJECT_FEATURE_RTC
+    bool "RTC feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+	
+config QUEC_PROJECT_FEATURE_USB_CHARGE
+    bool "USB_CHARGE feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+		
+config QUEC_PROJECT_FEATURE_SFS_FILE
+    bool "SFS FILE feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_FILE
+	depends on QUEC_PROJECT_FEATURE_SSL
+    default y
+	
+config QUEC_PROJECT_FEATURE_VIRT_AT
+    bool "VIRT AT feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_ATC_PARSE
+	default y if QL_OPEN_EXPORT_PKG
+    default n
+
+config QUEC_PROJECT_FEATURE_CMUX
+    bool "VIRT AT feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_ATC_PARSE
+	default n if QL_OPEN_EXPORT_PKG
+    default y
+	
+config QUEC_PROJECT_NOTIFY_EVENT
+    bool "AT of event enabled"
+	depends on QUEC_PROJECT_FEATURE
+    default n
+
+config SUPPORT_INNER_DELTA_NV
+	bool "support inner delta nv"
+	depends on QUEC_PROJECT_FEATURE
+    default n
+        
+  
+config QUEC_PROJECT_FEATURE_PSM
+    bool "PSM feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_SLEEP
+    default n
+	
+config QUEC_PROJECT_FEATURE_JAMDET
+    bool "JAMDET feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE  
+    depends on QUEC_PROJECT_FEATURE_NW
+    default y
+
+config QUEC_PROJECT_FEATURE_QDSIM
+    bool "QDSIM feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on DUAL_SIM_SUPPORT
+    default n
+
+config QUEC_PROJECT_FEATURE_DSSS
+    bool "DSSS feature for Quectel"
+    depends on QUEC_PROJECT_FEATURE
+    default n
+
+config QUEC_PROJECT_FEATURE_SDDET
+    bool "SDDET feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE  
+    depends on QUEC_PROJECT_FEATURE_SDMMC
+    depends on QUEC_PROJECT_FEATURE_GPIO
+    default n if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_USB
+    bool "USB feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default y
+
+config QUEC_PROJECT_FEATURE_USB_MASS_STORAGE
+    bool "USB feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_USB
+	default n
+
+config QUEC_PROJECT_FEATURE_USB_CCID_DEVICE
+    bool "USB feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_USB
+	default n
+	
+config QUEC_PROJECT_FEATURE_USB_DRIVERS
+    bool "USB Drivers feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE  
+    default y
+	
+config QUEC_PROJECT_FEATURE_USB_HID_DEVICE
+    bool "USB HID feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE  
+    default n
+	
+config QUEC_PROJECT_FEATURE_USB_AUDIO
+    bool "USB Audio feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_USB 	
+    default n
+	
+config QUEC_PROJECT_FEATURE_PBK
+    bool "Phone Book feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default n if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_STK
+    bool "STK feature for Quectel"
+    depends on QUEC_PROJECT_FEATURE
+    default n if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_BIP
+    bool "BIP feature for Quectel"
+    depends on QUEC_PROJECT_FEATURE
+    default n if QL_OPEN_EXPORT_PKG
+    default y
+	
+config QUEC_PROJECT_FEATURE_BOOT_URC
+    bool "BOOT FOTA feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE 
+	depends on QUEC_PROJECT_FEATURE_FOTA	
+    default n if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_BOOT_SDMMC
+    bool "BOOT SDMMC feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE 
+	depends on QUEC_PROJECT_FEATURE_FOTA
+	depends on QUEC_PROJECT_FEATURE_SDMMC
+	depends on FS_MOUNT_SDCARD
+	depends on SDMMC_SUPPORT
+    default y
+
+config QUEC_PROJECT_FEATURE_BOOT_EMMC
+    bool "BOOT SDMMC feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE 
+	depends on QUEC_PROJECT_FEATURE_FOTA
+	depends on QUEC_PROJECT_FEATURE_EMMC
+    default n
+
+config QUEC_PROJECT_FEATURE_BOOT_SPI4_BUS
+    bool "Spi4 bus feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default n
+	
+config QUEC_PROJECT_FEATURE_BOOT_NAND_FLASH
+    bool "BOOT NAND FLASH feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_FEATURE_BOOT_SPI4_BUS
+	depends on QUEC_PROJECT_FEATURE_FS_NAND_FLASH
+	depends on QUEC_PROJECT_FEATURE_BOOT_FAT_RDONLY
+    default n
+	
+config QUEC_PROJECT_FEATURE_BOOT_SPI6_NAND
+    bool "BOOT NAND FLASH feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_FS_NAND_FLASH
+	depends on QUEC_PROJECT_FEATURE_BOOT_FAT_RDONLY
+    default n
+
+config QUEC_PROJECT_FEATURE_BOOT_FAT_RDONLY
+    bool "BOOT FAT RDONLY feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE 
+	depends on QUEC_PROJECT_FEATURE_FOTA
+    default y
+
+config QUEC_PROJECT_FEATURE_BOOT_FAT_RW
+    bool "BOOT FAT WD feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE 
+	depends on QUEC_PROJECT_FEATURE_FOTA
+    default n
+
+config QUEC_PROJECT_FEATURE_BOOT_SPI4_EXTNSFFS
+    bool "Spi6 ext nor feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_FEATURE_BOOT_SPI4_BUS
+    default n
+	
+config QUEC_PROJECT_FEATURE_BOOT_SPI4_NORFLASH
+    bool "Spi4 nor flash feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_FEATURE_BOOT_SPI4_BUS
+    default n
+    
+config QUEC_PROJECT_FEATURE_HEADSET_DET
+    bool "SDDET feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_FEATURE_AUDIO
+    default n
+	
+config QUEC_PROJECT_FEATURE_FS_NAND_FLASH
+    bool "FS NAND FLASH feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE 
+	depends on QUEC_PROJECT_FEATURE_SPI_NAND_FLASH || QUEC_PROJECT_FEATURE_SPI6_NAND_FLASH
+    default n
+
+config QUEC_PROJECT_FEATURE_FS_NOR_FLASH
+    bool "FS NOR FLASH feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE 
+	depends on QUEC_PROJECT_FEATURE_SPI
+	depends on QUEC_PROJECT_FEATURE_SPI_FLASH
+	depends on QUEC_PROJECT_FEATURE_SPI_NOR_FLASH
+    default n
+	
+config QUEC_PROJECT_FEATURE_RFTEST
+    bool "RFTEST feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_FEATURE_NW
+    default y
+
+config QUEC_PROJECT_FEATURE_SSH2
+    bool "SSH2 feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SSL
+    default n
+    
+config QUEC_PROJECT_FEATURE_EMBED_NOR_FLASH
+    bool "EMBED NOR FLASH feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default n
+
+config QUEC_PROJECT_FEATURE_BOOT_LED
+    bool "Boot LED feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default n
+
+config QUEC_PROJECT_FEATURE_BOOT_ADC
+	bool "BOOT ADC feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default n
+	
+config QUEC_PROJECT_FEATURE_BOOT_SCATTER
+	bool "BOOT SCATTER feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default n
+
+config QUEC_PROJECT_FEATURE_SMTP
+	bool "SMTP feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET
+	depends on QUEC_PROJECT_FEATURE_CURL
+	default n if QL_OPEN_EXPORT_PKG
+	default y
+
+config QUEC_PROJECT_FEATURE_DTMF
+    bool "DTMF feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_AUDIO
+    default y
+
+config QUEC_PROJECT_FEATURE_GPRS_DATA_TRANSFER
+	bool "BOOT GPRS_DATA_TRANSFER feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default n
+	
+config QUEC_PROJECT_FEATURE_LCD_GC9305
+	bool "LCD GC9305 DRIVER feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_LCD
+    default y
+	
+config QUEC_PROJECT_FEATURE_LCD_ST7735S
+	bool "LCD ST7735S DRIVER feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_LCD
+    default y
+	
+config QUEC_PROJECT_FEATURE_LCD_ST7789V
+	bool "LCD ST7789V DRIVER feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_LCD
+    default y
+	
+config QUEC_PROJECT_FEATURE_LCD_ST7567A
+	bool "LCD ST7567A DRIVER feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_LCD
+    default y
+
+config QUEC_PROJECT_FEATURE_LCD_ST7796S
+	bool "LCD ST7796S DRIVER feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_LCD
+    default n
+
+config QUEC_PROJECT_FEATURE_LCD_ST7365P
+	bool "LCD ST7365P DRIVER feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_LCD
+    default n
+config QUEC_PROJECT_FEATURE_MIPI_LCD_ST7701S
+	bool "MIPI LCD ST7701S DRIVER feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_MIPI_LCD
+    default y
+
+config QUEC_PROJECT_FEATURE_MIPI_LCD_JD9365DA
+	bool "MIPI LCD JD9365DA DRIVER feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_MIPI_LCD
+    default y
+
+config QUEC_PROJECT_FEATURE_MIPI_LCD_SC7705
+	bool "MIPI LCD SC7705 DRIVER feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_MIPI_LCD
+    default y
+
+config QUEC_PROJECT_FEATURE_MIPI_LCD_ST7365
+	bool "MIPI LCD ST7365 DRIVER feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_MIPI_LCD
+    default y
+
+config QUEC_PROJECT_FEATURE_CAMERA_GC032A
+	bool "Camera GC032A DRIVER feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_CAMERA
+    default y
+	
+config QUEC_PROJECT_FEATURE_CAMERA_GC0310
+	bool "Camera GC0310 DRIVER feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_CAMERA
+    default y
+
+config QUEC_PROJECT_FEATURE_CAMERA_BF30A2
+	bool "Camera BF30A2 DRIVER feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_CAMERA
+    default y
+
+config QUEC_PROJECT_FEATURE_CAMERA_BF20A6
+	bool "Camera BF20A6 DRIVER feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_CAMERA
+    default y if QL_OPEN_EXPORT_PKG
+	default n
+
+config QUEC_PROJECT_FEATURE_CAMERA_BF3095
+	bool "Camera BF3095 DRIVER feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_CAMERA
+    default n if QL_OPEN_EXPORT_PKG
+	default n
+
+config QUEC_PROJECT_FEATURE_PROG_FW_FMTSYS
+    bool "If format file system when Program Firmware for Quectel Product"
+	depends on QUEC_PROJECT_FEATURE
+    default n
+	
+config QUEC_PROJECT_FEATURE_PROG_FW_FMTEXT
+    bool "If format EXT file system when Program Firmware for Quectel Product"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SPI6_EXT_NOR
+    default n
+	
+config QUEC_PROJECT_FEATURE_IMAGE_TIMESTAMP
+    bool "If contains timestamp signature for compiled image"
+    default y
+    help
+        To determine whether the compiled image contains timestamp signature or not. 
+        if both image have no timestamp signature, the generated differential file of them are more smaller. 
+        if no timestamp and the kernel code has no change, there will be no differential for kernel image among multiple compilation.
+
+config QUEC_PROJECT_FEATURE_IMAGE_BOOT_DISABLE
+    bool "If contains boot/spl image for compiled image package"
+    default n
+    help
+        To determine whether the compiled image package contains boot/spl image or not. 
+		
+config QUEC_PROJECT_FEATURE_TP
+    bool "touch penal feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_GPIO
+	depends on QUEC_PROJECT_FEATURE_ADC
+ 	default n if QL_OPEN_EXPORT_PKG
+    default n
+	
+config QUEC_PROJECT_FEATURE_ALIIOTSMARTCARD
+    bool "ALIIOT SMARTCARD feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_FEATURE_SOCKET
+	depends on QUEC_PROJECT_FEATURE_PBK
+    default n
+	
+config QUEC_PROJECT_FEATURE_ALIPAY_IOT_SDK
+    bool "ALIPAY IOT feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_DNS
+	depends on QUEC_PROJECT_FEATURE_NW
+	depends on QUEC_PROJECT_FEATURE_FILE
+    default n
+	
+config QUEC_PROJECT_FEATURE_MAYILIAN
+    bool "mayilian feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_UART
+	depends on QUEC_PROJECT_FEATURE_VIRT_AT
+	depends on QUEC_PROJECT_FEATURE_FILE
+ 	default n if QL_OPEN_EXPORT_PKG
+    default n
+
+config QUEC_PROJECT_FEATURE_HW_IOT_DEVICE_SDK
+    bool "HWIOT IOT feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_DNS
+	depends on QUEC_PROJECT_FEATURE_NW
+    default n
+
+config QUEC_PROJECT_FEATURE_NTRIP_RTK
+    bool "ntrip rtk feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET
+ 	default n if QL_OPEN_EXPORT_PKG
+    default n
+	
+config QUEC_PROJECT_FEATURE_WEBSOCKET
+    bool "WEBSOCKET feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_SOCKET
+	depends on QUEC_PROJECT_FEATURE_SSL	
+    default n
+
+config QUEC_PROJECT_FEATURE_SS
+    bool "ss feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+ 	default n if QL_OPEN_EXPORT_PKG
+    default y
+
+config QUEC_PROJECT_FEATURE_ETHERNET
+    bool "ethernet feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+ 	default n if QL_OPEN_EXPORT_PKG
+    default n
+
+config QUEC_PROJECT_FEATURE_WIFI
+    bool "wifi feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_UART
+	depends on QUEC_PROJECT_FEATURE_SPI
+ 	default n if QL_OPEN_EXPORT_PKG
+    default n
+	
+config QUEC_PROJECT_FEATURE_L2TP
+    bool "l2tp feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+ 	default n if QL_OPEN_EXPORT_PKG
+    default n
+
+config QUEC_PROJECT_FEATURE_OHOS_ONLY_LIBS
+    bool "OHOS ONLY_LIBS feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default n
+
+config QUEC_PROJECT_FEATURE_OHOS
+    bool "OHOS feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+    default n
+
+config QUEC_PROJECT_FEATURE_OHOS_IOT
+    bool "OHOS_IOT feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_OHOS
+    default n
+
+config QUEC_PROJECT_FEATURE_OHOS_CMSIS
+    bool "OHOS_CMSIS feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_OHOS
+    default n
+
+config QUEC_PROJECT_FEATURE_OHOS_POSIX
+    bool "OHOS_POSIX feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_OHOS
+    default n
+
+config QUEC_PROJECT_FEATURE_OHOS_XTS
+    bool "OHOS_XTS feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_OHOS
+    default n
+
+config QUEC_PROJECT_DEF_BYTE_COUNT
+    int "project def for pack indeltanv"
+	depends on QUEC_PROJECT_FEATURE
+    default 3
+
+config QUEC_PROJECT_FEATURE_SLAS
+    bool "SLAS feature for Quectel"
+    depends on QUEC_PROJECT_FEATURE
+    default n
+
+config QUEC_PROJECT_FEATURE_QUECSCAN
+    bool "QuecScan feature for Quectel"
+    depends on QUEC_PROJECT_FEATURE
+    depends on QUEC_PROJECT_FEATURE_SLAS
+    default n
+	
+config QUEC_PROJECT_FEATURE_CNKTD
+    bool "CNKTD API feature"
+    depends on QUEC_PROJECT_FEATURE
+    default n
+
+config QUEC_PROJECT_FEATURE_XLAT
+	bool "XLAT feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE_LWIP
+	default y
+	
+config QUEC_PROJECT_FEATURE_ALIPAY_GCC_SDK
+    bool "ALIPAY GCC SDK feature for Quectel"
+	depends on QUEC_PROJECT_FEATURE
+	depends on QUEC_PROJECT_FEATURE_RTC
+	depends on QUEC_PROJECT_FEATURE_BT
+	depends on QUEC_PROJECT_FEATURE_GPIO
+	depends on QUEC_PROJECT_FEATURE_I2C
+	depends on QUEC_PROJECT_FEATURE_LWIP
+    default n
+
+config QUEC_PROJECT_FEATURE_FATFS_SAFE
+    bool "FATFS_SAFE feature for Quectel"
+    depends on QUEC_PROJECT_FEATURE
+    default n
+
+config QUEC_PROJECT_FEATURE_QUECOS
+    bool "quecos feature for Quectel"
+    default n
+
+config QUEC_PROJECT_FEATURE_REDDA_SECURE
+    bool "FATFS_SAFE feature for Quectel"
+    depends on QUEC_PROJECT_FEATURE_SECURE_BOOT
+    default n
+
+    help
+		Note: 1. If this macro is enabled (fatfs power down protection is enabled), the storage device can only be read only on the computer, 
+		         and no other operations can be performed,otherwise the integrity of the file system will be damaged.
+  		      2. If this macro is used, bootload cannot write files.
+		
+orsource "at/Kconfig"
+orsource "ql_at/Kconfig"
+orsource "quecos/Kconfig"
+
+endmenu

@@ -1,0 +1,8 @@
+# Copyright (C) 2021 Kaihongdigi (Nanjing) Technologies Co., Ltd. All rights reserved.
+
+group("ecx00u")
+{
+    # deps = [ "sdk_liteos:quectel_build_ready" ]
+    deps = [ "sdk_liteos:jamie_test" ]
+}
+

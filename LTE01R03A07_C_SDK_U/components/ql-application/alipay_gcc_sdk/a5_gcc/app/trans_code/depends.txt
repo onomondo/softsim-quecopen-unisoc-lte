@@ -1,0 +1,24 @@
+这是乘车码模块,对应乘车码功能[可选集成,需要配合加密芯片2.0 ZFB-2使用]，依赖如下:
+fwk_common
+hal_os
+hal_device_info
+3rdparty_uEcc
+fwk_bind_status
+3rdparty_cJSON
+fwk_crypt
+fwk_secure_mode_se
+hal_se_v1
+fwk_network
+hal_network
+3rdparty_mbedtls
+3rdparty_protobuf-c
+3rdparty_sm3
+fwk_js_api
+fwk_crypt_ext
+fwk_sm2
+fwk_quickjs_adapt
+3rdparty_quickjs
+fwk_device_certificate
+hal_cert
+fwk_storage
+hal_file

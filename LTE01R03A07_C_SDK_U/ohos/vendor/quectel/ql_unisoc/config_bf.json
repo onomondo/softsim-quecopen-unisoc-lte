@@ -1,0 +1,68 @@
+{
+    "product_name": "ql_unisoc",
+    "ohos_version": "OpenHarmony 3.2",
+    "device_company": "quectel",
+    "board": "ecx00u",
+    "kernel_type": "liteos_m",
+    "kernel_version": "",
+    "kernel_is_prebuilt": true,
+    "subsystems": [
+      {
+        "subsystem": "iot_hardware",
+        "components": [
+          { "component": "iot_controller", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "vendor",
+        "components": [
+          { "component": "ecx00u_sdk", "target": "//device/quectel/ecx00u/sdk_liteos:board", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "hiviewdfx",
+        "components": [
+          { "component": "hilog_lite", "features":[] },
+          { "component": "hievent_lite", "features":[] },
+          { "component": "blackbox", "features":[] },
+          { "component": "hidumper_mini", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "utils",
+        "components": [
+           { "component": "file", "features":[] },
+           { "component": "kv_store", "features":[] },
+           { "component": "os_dump", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "distributed_schedule",
+        "components": [
+          { "component": "samgr_lite", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "startup",
+        "components": [
+          { "component": "bootstrap_lite", "features":[] },
+          { "component": "syspara_lite", "features":[] }
+        ]
+      },
+      {
+        "subsystem": "test",
+        "components": [
+          { "component": "xts_acts", "features":[] },
+          { "component": "xts_tools", "features":[] }
+         ]
+      },
+      {
+        "subsystem": "applications",
+        "components": [
+          { "component": "ql_ohos_app", "features":[] }
+         ]
+      }
+    ],
+    "third_party_dir": "//third_party",
+    "product_adapter_dir": "//vendor/quectel/ql_unisoc/hals"
+}

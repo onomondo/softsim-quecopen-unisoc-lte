@@ -1,0 +1,13 @@
+这是设备激活模块[暂不用集成]，依赖如下:
+fwk_common
+hal_os
+hal_device_info
+3rdparty_uEcc
+fwk_device_certificate
+hal_cert
+3rdparty_cJSON
+3rdparty_mbedtls
+3rdparty_sm3
+fwk_crypt
+fwk_secure_mode_se
+hal_se_v1

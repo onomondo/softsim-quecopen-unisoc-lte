@@ -1,0 +1,29 @@
+<!--
+Copyright (C) 2018 RDA Technologies Limited and/or its affiliates("RDA").
+All rights reserved.
+
+This software is supplied "AS IS" without any warranties.
+RDA assumes no responsibility or liability for the use of the software,
+conveys no license or title under any patent, copyright, or mask work
+right to the product. RDA reserves the right to make changes in the
+software without notification.  RDA also make no representation or
+warranty that such application will be suitable for the specified use
+without further testing or modification.
+-->
+
+<!DOCTYPE deliver [
+  <!ENTITY board_name "ecx00u">
+  <!ENTITY product_name "ql_unisoc">
+]>
+
+<deliver>
+	<recursive src="out/&board_name;/&product_name;/libs" dst="ohos_libs/"/>
+	<recursive src="commonlibrary/utils_lite/include" dst="ohos_inc"/>
+	<recursive src="base/iothardware/peripheral/interfaces/inner_api" dst="ohos_inc"/>
+
+	<recursive src="device/quectel/&board_name;/sdk_liteos/platform/include" dst="ohos_inc"/>
+	<file src="device/quectel/ql_adapter/kal/cmsis/cmsis_os.h" dst="ohos_inc/cmsis_os.h"/>
+	<file src="device/quectel/ql_adapter/kal/cmsis/cmsis_os2.h" dst="ohos_inc/cmsis_os2.h"/>
+	<file src="device/quectel/ql_adapter/kal/cmsis/hos_cmsis_adp.h" dst="ohos_inc/hos_cmsis_adp.h"/>
+
+</deliver>

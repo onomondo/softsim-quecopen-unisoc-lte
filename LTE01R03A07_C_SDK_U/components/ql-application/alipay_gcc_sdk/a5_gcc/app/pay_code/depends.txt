@@ -1,0 +1,10 @@
+这是支付码模块[必选集成]，依赖如下:
+fwk_common
+hal_os
+hal_device_info
+3rdparty_uEcc
+fwk_secure_mode_se
+hal_se_v1
+3rdparty_cJSON
+fwk_crypt
+fwk_bind_status

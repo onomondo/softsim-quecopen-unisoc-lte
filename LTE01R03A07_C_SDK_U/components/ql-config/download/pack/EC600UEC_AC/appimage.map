@@ -1,0 +1,2158 @@
+Archive member included to satisfy reference by file (symbol)
+
+ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+                              components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj (ql_ledcfg_app_init)
+ql_app_libs/libql_app_peripheral.a(ql_pin_cfg.c.obj)
+                              components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj (ql_pin_cfg_map)
+ql_app_libs/libql_app_power.a(power_demo.c.obj)
+                              components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj (ql_power_app_init)
+
+Allocating common symbols
+Common symbol       size              file
+
+wake_lock_1         0x4               ql_app_libs/libql_app_power.a(power_demo.c.obj)
+wake_lock_2         0x4               ql_app_libs/libql_app_power.a(power_demo.c.obj)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 lib/core_stub.o
+ .data          0x00000000        0x0 lib/core_stub.o
+ .bss           0x00000000        0x0 lib/core_stub.o
+ .text.core_stub.__getreent
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.calloc
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.free
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ip4addr_aton
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ip4addr_ntoa
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ip4addr_ntoa_r
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ip6addr_aton
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ip6addr_ntoa
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ip6addr_ntoa_r
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ipaddr_aton
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_accept
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_bind
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_close
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_connect
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_fcntl
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_freeaddrinfo
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_getAckedSize
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_getDefaultNetif
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_getRecvAvailSize
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_getRecvBufSize
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_getSentSize
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_get_error
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_getaddrinfo
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_gethostbyname
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_getpeername
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_getsockname
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_getsockopt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_htonl
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_htons
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_ioctl
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_listen
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_read
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_recv
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_recvfrom
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_recvmsg
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_select
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_send
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_sendmsg
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_sendto
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_setsockopt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_shutdown
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_socket
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_write
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwip_writev
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwiperf_start_tcp_client
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwiperf_start_tcp_client_default
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwiperf_start_tcp_server
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.lwiperf_start_tcp_server_default
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.malloc
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_aes_crypt_cbc
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_aes_crypt_cfb128
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_aes_crypt_cfb8
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_aes_crypt_ctr
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_aes_crypt_ecb
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_aes_crypt_ofb
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_aes_crypt_xts
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_aes_decrypt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_aes_encrypt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_aes_free
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_aes_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_aes_setkey_dec
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_aes_setkey_enc
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_aes_xts_free
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_aes_xts_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_aes_xts_setkey_dec
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_aes_xts_setkey_enc
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_base64_decode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_base64_encode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_debug_set_threshold
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_internal_aes_decrypt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_internal_aes_encrypt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_net_accept
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_net_bind
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_net_connect
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_net_free
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_net_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_net_poll
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_net_recv
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_net_recv_timeout
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_net_send
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_net_set_block
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_net_set_nonblock
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_net_usleep
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_pk_free
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_pk_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_pk_parse_key
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_check_privkey
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_check_pub_priv
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_check_pubkey
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_complete
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_copy
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_export
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_export_crt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_export_raw
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_free
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_gen_key
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_get_len
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_import
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_import_raw
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_pkcs1_decrypt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_pkcs1_encrypt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_pkcs1_sign
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_pkcs1_verify
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_private
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_public
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_rsaes_oaep_decrypt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_rsaes_oaep_encrypt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_rsaes_pkcs1_v15_decrypt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_rsaes_pkcs1_v15_encrypt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_rsassa_pkcs1_v15_sign
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_rsassa_pkcs1_v15_verify
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_rsassa_pss_sign
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_rsassa_pss_verify
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_rsassa_pss_verify_ext
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_rsa_set_padding
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_close_notify
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_conf_authmode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_conf_ca_chain
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_conf_ciphersuites
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_conf_dbg
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_conf_handshake_timeout
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_conf_max_frag_len
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_conf_max_version
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_conf_min_version
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_conf_own_cert
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_conf_psk
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_conf_read_timeout
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_conf_rng
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_conf_session_cache
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_conf_verify
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_config_defaults
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_config_free
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_config_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_free
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_get_verify_result
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_handshake
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_read
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_send_alert_message
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_session_free
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_session_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_session_reset
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_set_bio
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_set_hostname
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_set_timer_cb
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_setup
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_ssl_write
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_timing_get_delay
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_timing_set_delay
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_x509_crt_free
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_x509_crt_info
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_x509_crt_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_x509_crt_parse
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_x509_crt_parse_der
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_x509_crt_verify
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_x509_crt_verify_info
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_x509_crt_verify_restartable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mbedtls_x509_crt_verify_with_profile
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.memalign
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.mlConvertStr
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiEnterCritical
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiEpochSecond
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiEpochTime
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiEventSend
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiEventWait
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiExitCritical
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiLocalSecond
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiLocalTime
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiMemAllocSize
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiMemRef
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiMemRefCount
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiMemSetCaller
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiSetEpochTime
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiSetTimeZoneOffset
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiSetUpTime
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiThreadCallback
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiThreadCreate
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiThreadCurrent
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiThreadExit
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiTimeZoneOffset
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiTimerCreate
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiTimerStart
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiTimerStartRelaxed
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiTraceBasic
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiTraceEx
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiTraceExSpec
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiTraceIdBasic
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiTraceIdEx
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiTraceIdExSpec
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiTraceVprintf
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiUpTime
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.osiUpTimeUS
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.pbuf_alloc
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.pbuf_take
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_CamCaptureImage
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_CamClose
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_CamGetSensorInfo
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_CamI2CRead
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_CamI2CWrite
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_CamInit
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_CamInit0310SPI
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_CamPowerOff
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_CamPowerOn
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_CamPreview
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_CamPreviewDQBUF
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_CamPreviewQBUF
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_CamSetBufopt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_CamStopPreview
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_I2cInit
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_I2cRead
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_I2cRead_16bit_addr
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_I2cRelease
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_I2cWrite
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_I2cWrite_16bit_addr
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_adc_get_volt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_adc_get_volt_raw
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aes_string_decryption
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aes_string_encryption
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_amr_file_end
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_amr_file_pause
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_amr_file_start
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_amr_stream_close
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_amr_stream_write
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_assert
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_codec_clk_disable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_codec_clk_enable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_codec_clk_enable_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_codec_read_nv
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_codec_write_nv
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_data_done
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_dtmf_play
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_dtmf_tone_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_enable_pop_delay
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_get_icmic_gain
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_get_icsidet_gain
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_get_icvolume_level_gain
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_get_input_type
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_get_output_type
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_get_pa_type
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_get_play_state
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_get_playing_func
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_get_quality
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_get_record_gain
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_get_record_state
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_get_recording_func
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_get_ringtone_type
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_get_volume
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_loop_back_start
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_loop_back_stop
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_pcm_open
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_play_file_start
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_play_file_start_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_play_stream_start
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_player_pause
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_player_resume
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_player_stop
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_poc_switch
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_record_file_start
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_record_stop
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_record_stream_start
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_record_stream_start_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_recorder_pause
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_recorder_resume
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_resampler_create
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_resampler_destroy
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_resampler_run
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_set_calib_real_time
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_set_headset_depop
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_set_icmic_gain
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_set_icsidet_gain
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_set_icvolume_level_gain
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_set_input_type
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_set_output_type
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_set_pa_type
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_set_quality
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_set_record_gain
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_set_ringtone_type
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_set_volume
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_start_poc_mode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_stop_poc_mode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_tone_detect
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_tone_detect_set_cb
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_tone_play
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_tone_stop
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_aud_wait_play_finish
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_autosleepex_enable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_bind_receiverpa_cb
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_bind_ring_tone_cb
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_bind_sim_and_profile
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_bind_speakerpa_cb
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_camPrint
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_charge_get_config
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_charge_set_config
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_charge_set_over_temp
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_closedir
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_cust_nvm_fread
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_cust_nvm_fwrite
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_get_default_pdn_cfg
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_get_default_pdn_info
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_get_dns_addr
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_get_nat
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_get_nat_assign
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_get_sim_profile_is_active
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_get_subnet
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_get_usbnet_customer_cfg
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_get_usbnet_internal_forward
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_register_cb
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_set_default_pdn_cfg
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_set_dns_addr
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_set_nat
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_set_nat_assign
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_set_subnet
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_set_usbnet_customer_cfg
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_set_usbnet_internal_forward
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_datacall_unregister_cb
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_delay_us
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_check_property
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_config_dump
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_feed_wdt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_get_cp_version
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_get_cpu_uid
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_get_dump_info
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_get_firmware_subversion
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_get_firmware_version
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_get_imei
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_get_mac_address
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_get_model
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_get_modem_fun
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_get_product_id
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_get_sn
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_get_sys_srand
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_get_temp_value
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_get_wdt_cfg
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_memory_size_query
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_dev_set_modem_fun
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_event_wait
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fac_cust_nvm_fread
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fclose
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ferror
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fgetc
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fgets
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_file_exist
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fopen
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fota_file_reset
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fota_get_image_version
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fota_get_pack_name
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fota_get_result
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fota_image_verify
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fota_image_verify_without_setflag
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fota_pack_name_convert_fs
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fprintf
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fputc
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fputs
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fread
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_frewind
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fs_convert_fota_pack_name
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fs_fat32_free_size
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fs_free_size
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fs_free_size_by_fd
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fs_total_size
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fs_trace_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fscanf
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fseek
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fsize
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fstat
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fsync
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ftell
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ftp_client_close
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ftp_client_cwd
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ftp_client_delete
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ftp_client_get_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ftp_client_list
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ftp_client_mkdir
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ftp_client_new
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ftp_client_open
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ftp_client_put_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ftp_client_pwd
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ftp_client_release
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ftp_client_rename
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ftp_client_rmdir
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ftp_client_setopt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ftp_client_size
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ftruncate
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_fwrite
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_audio_state
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_authorization
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_battery_level
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_battery_vol
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_boot_cause
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_charge_cur
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_charge_status
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_data_call_info
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_file_format
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_powerup_reason
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_pwrkey_status
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_sim_and_profile
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_usb_detect_max_time
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_vbus_state
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_vchg_vol
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_voice_mute_uplink
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_volume
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_get_wakeup_source
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_gettimeofday
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_gpio_deinit
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_gpio_get_direction
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_gpio_get_level
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_gpio_get_pull
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_gpio_set_direction
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_gpio_set_pull
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_headset_cb_register
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_headset_plug_status_get
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_hmac_sha1
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_httpc_continue_dload
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_httpc_formadd
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_httpc_getinfo
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_httpc_new
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_httpc_perform
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_httpc_release
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_httpc_setopt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_i2c_read_slave_data
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_i2c_write_slave_data
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_int_disable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_int_disable_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_int_enable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_int_enable_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_int_register
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_int_unregister
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_keypad_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_keypad_set_config
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_keypad_state
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_brightness_pin_sel
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_clear_screen
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_display_off
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_display_on
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_enter_sleep
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_free
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_get_config
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_get_info
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_init_bwscreen
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_init_ext
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_init_st7567a
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_reset_config
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_set_brightness
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_set_busmode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_set_config
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_set_display_offset
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_set_level_brightness
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_set_reset_pin
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_special_change
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_special_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lcd_write
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_led_get_sim
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_led_set_sim
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_log_get_fs_trace_opt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_log_get_trace_max_size
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_log_set_fs_trace_opt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_log_set_port
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_log_set_trace_max_size
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lpm_wakelock_create
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lpm_wakelock_delete
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_lpm_wakelock_lock
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_mkdir
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_mqtt_client_deinit
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_mqtt_client_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_mqtt_client_is_connected
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_mqtt_client_setopt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_mqtt_connect
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_mqtt_disconnect
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_mqtt_onenet_generate_auth_token
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_mqtt_publish
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_mqtt_set_inpub_callback
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_mqtt_sub_unsub
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_network_register_wait
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ntp_sync
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nvm_fread
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nvm_fwrite
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_auto_black_elec_fence
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_cell_info
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_cell_info_async
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_cell_sinr
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_cemode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_cfg_band
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_csq
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_data_count
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_disrplmn
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_drxtm
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_edrx
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_emm_gmm_cause_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_esm_sm_cause_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_esmfail_times
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_jamdet_config
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_jamdet_mode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_jamdet_status
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_jamdetex_config
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_lte_auto_disable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_measurement_flag_aft_local_rel
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_mode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_nitz_time_info
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_operator_name
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_reg_status
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_rrc_duration
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_selection
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_signal_strength
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_get_tau_type_aft_local_rel
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_register_cb
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_reset_data_count
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_set_auto_black_elec_fence
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_set_cemode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_set_cfg_band
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_set_disrplmn
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_set_drxtm
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_set_edrx
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_set_esmfail_times
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_set_event
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_set_jamdet_config
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_set_jamdet_mode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_set_jamdetex_config
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_set_lte_auto_disable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_set_measurement_flag_aft_local_rel
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_set_mode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_set_power_range
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_set_selection
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_nw_set_tau_type_aft_local_rel
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_open
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_opendir
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pcm_buffer_reset
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pcm_buffer_used
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pcm_close
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pcm_open
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pcm_read
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pcm_write
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pin_get_func
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pin_set_drving
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pin_set_gpio
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ping_start
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_play_file_start
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_play_file_stop
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_play_mp3_stream_start
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_psm_get_timer
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_psm_register_enter_cb
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_psm_sleep_enable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pwm_close
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pwm_disable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pwm_pwl_enable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pwm_pwt_enable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pwrkey_callback_register
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pwrkey_longpress_cb_register
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pwrkey_press_cb_register
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pwrkey_release_cb_register
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_pwrkey_shutdown_time_set
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_quec_trace_enable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_readdir
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_remove
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rename
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rewinddir
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rmdir
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rmdir_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtc_enable_alarm
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtc_get_alarm
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtc_get_cfg
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtc_get_localtime
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtc_get_time
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtc_get_timezone
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtc_print_time
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtc_register_cb
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtc_set_alarm
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtc_set_cfg
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtc_set_time
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtc_set_timezone
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtc_to_sec_time
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_enter_critical
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_event_group_clear
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_event_group_create
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_event_group_delete
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_event_group_get
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_event_group_set
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_event_group_sync
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_event_group_wait
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_event_send_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_exit_critical
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_feed_dog
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_get_cpu_using
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_get_system_tick
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_mutex_create
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_mutex_delete
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_mutex_lock
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_mutex_try_lock
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_mutex_unlock
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_queue_create
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_queue_delete
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_queue_get_cnt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_queue_get_free_cnt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_queue_release
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_queue_reset
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_queue_wait
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_scheduler_resume
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_scheduler_suspend
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_semaphore_create
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_semaphore_create_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_semaphore_delete
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_semaphore_get_cnt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_semaphore_release
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_semaphore_wait
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_sw_dog_disable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_sw_dog_enable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_swdog_register
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_swdog_unregister
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_task_change_priority
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_task_create_default
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_task_create_with_stack
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_task_get_current_ref
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_task_get_priority
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_task_get_status
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_task_get_userdata
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_task_resume
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_task_set_userdata
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_task_sleep_s
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_task_suspend
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_task_yield
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_timer_create
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_timer_delete
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_timer_is_running
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_timer_start
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_timer_start_relaxed
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_timer_start_us
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_timer_stop
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_rtos_up_time_ms
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_close
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_fat_is_lock
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_fat_lock
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_fat_unlock
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_fcreate_file
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_fdisk_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_get_block_number
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_get_hw_info
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_is_fdisk_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_is_format
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_is_format_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_is_mount
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_is_mount_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_mkfs
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_mkfs_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_mount
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_mount_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_open
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_read
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_register_power_reset_cb
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_sdio1_vdd_off
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_send_write_prot
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_set_clk
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_set_dev_cfg
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_umount
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_umount_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sdmmc_write
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sec_to_rtc_time
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_seekdir
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_set_audio_path_earphone
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_set_audio_path_receiver
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_set_audio_path_speaker
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_set_data_call_asyn_mode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_set_record_packet_size
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_set_record_samplerate
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_set_tone_gain
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_set_usb_detect_max_time
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_set_voice_mute_uplink
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_set_volume
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sfs_setkey
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sim_change_pin
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sim_disable_pin
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sim_enable_pin
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sim_get_card_status
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sim_get_card_status_phy
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sim_get_iccid
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sim_get_imsi
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sim_get_operate_id
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sim_get_phonenumber
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sim_get_write_count
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sim_hotplug_register_cb
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sim_send_apdu
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sim_set_hotplug
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sim_set_operate_id
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sim_unblock_pin
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sim_verify_pin
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_callback_register
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_delete_msg
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_delete_msg_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_get_center_address
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_get_code_mode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_get_ignore_cscs
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_get_init_status
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_get_storage
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_get_storage_info
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_read_msg
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_read_msg_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_read_msg_list
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_send_msg
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_send_msg_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_send_pdu
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_set_center_address
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_set_code_mode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_set_ignore_cscs
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_set_retry_count
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_sms_set_storage
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi6_ext_nor_flash_clk_set
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi6_ext_nor_flash_deinit
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi6_ext_nor_flash_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi6_ext_nor_flash_sffs_mkfs
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi6_ext_nor_flash_sffs_mount
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi6_ext_nor_flash_sffs_unmount
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_cs_auto
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_cs_high
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_cs_low
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_get_tx_fifo_free
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_init_ext
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_lcd_write_cmd
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_lcd_write_data
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nand_erase_block
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nand_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nand_init_ext
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nand_read_devid
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nand_read_devid_ex
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nand_read_page_spare
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nand_read_status
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nand_reset
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nand_write_page_spare
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nand_write_spare
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nand_write_status
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nor_erase_64k_block
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nor_erase_chip
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nor_erase_sector
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nor_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nor_init_ext
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nor_read
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nor_read_status_high
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nor_read_status_low
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nor_write
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nor_write_16bit_status
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_nor_write_8bit_status
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_read
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_read_follow_write
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_release
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_release_sys_clk
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_request_sys_clk
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_set_irq
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_write
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_spi_write_read
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_ciphersuit_is_valid
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_close_notify
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_conf_free
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_conf_get
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_conf_get_by_id
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_conf_init
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_conf_set
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_conf_set_by_id
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_free
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_get_bytes_avail
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_handshake
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_handshake_finished
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_new
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_read
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_set_hostname
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_set_socket_fd
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_setup
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ssl_write
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_start_data_call
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_stat
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_stop_data_call
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_switch_power_domain
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_telldir
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_truncate
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_close
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_get_dcbconfig
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_get_rx_mode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_get_simid
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_get_sleep_delay_time
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_get_tx_fifo_status
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_open
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_read
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_read_aviable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_register_cb
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_rx_trig_config
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_set_dcbconfig
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_set_event_mask
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_set_rx_mode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_set_simid
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_set_sleep_delay_time
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_write
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_uart_write_aviable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_ucs2_to_utf8
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_usb_disable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_usb_enable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_usb_get_detmode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_usb_get_enum_mode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_usb_get_hotplug_state
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_usb_get_remote_wakeup
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_usb_set_detmode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_usb_set_enum_mode
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_usb_set_remote_wakeup
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_utf8_to_gbk
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_virt_at_close
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_virt_at_open
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_virt_at_read
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_virt_at_write
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_voice_auto_answer
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_voice_call_answer
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_voice_call_callback_register
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_voice_call_clcc
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_voice_call_end
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_voice_call_fw
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_voice_call_hold
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_voice_call_start
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_voice_call_start_dtmf
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_voice_call_wait_get
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_voice_call_wait_set
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_xlat_get_enable
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_xlat_getopt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.ql_xlat_setopt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_app_at_add
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atCmdResp
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atCmdRespInfoNText
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamDefInt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamDefInt64
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamDefInt64InList
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamDefInt64InRange
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamDefIntInList
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamDefIntInRange
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamDefStr
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamDefUint
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamDefUint64
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamDefUint64InList
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamDefUint64InRange
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamDefUintByStrMap
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamDefUintInList
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamDefUintInRange
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamHexData
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamHexInt64InRange
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamHexRawText
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamInt
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamInt64
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamInt64InList
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamInt64InRange
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamIntInList
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamIntInRange
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamIsEmpty
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamOptStr
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamRawText
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamStr
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamTrimTail
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamUint
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamUint64
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamUint64InList
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamUint64InRange
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamUintByStrMap
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamUintInList
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atParamUintInRange
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.quec_atResp
+                0x00000000        0x8 lib/core_stub.o
+ .text.core_stub.realloc
+                0x00000000        0x8 lib/core_stub.o
+ .text          0x00000000        0x0 components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .data          0x00000000        0x0 components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .bss           0x00000000        0x0 components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .text.ql_is_mipi_lcd_pin
+                0x00000000       0x22 components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .rodata.ql_mipi_lcd_pin
+                0x00000000        0x6 components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .text          0x00000000        0x0 ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+ .data          0x00000000        0x0 ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+ .bss           0x00000000        0x0 ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+ .text          0x00000000        0x0 ql_app_libs/libql_app_peripheral.a(ql_pin_cfg.c.obj)
+ .data          0x00000000        0x0 ql_app_libs/libql_app_peripheral.a(ql_pin_cfg.c.obj)
+ .bss           0x00000000        0x0 ql_app_libs/libql_app_peripheral.a(ql_pin_cfg.c.obj)
+ .text          0x00000000        0x0 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+ .data          0x00000000        0x0 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+ .bss           0x00000000        0x0 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+ .text._pwrkey_release_callback
+                0x00000000       0x20 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+ .text._pwrkey_press_callback
+                0x00000000       0x20 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+ .text._pwrkey_longpress_callback
+                0x00000000       0x20 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+ .text._pwrkey_demo_callback
+                0x00000000       0x20 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+ .text.ql_pwrkey_demo_thread
+                0x00000000       0xc4 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+ .text.power_timer_callback
+                0x00000000       0x28 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+ .text.ql_pwrkey_app_init
+                0x00000000       0x50 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+ .bss.power_timer
+                0x00000000        0x4 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+ .bss.pwrkey_task
+                0x00000000        0x4 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+ .data.resume_src
+                0x00000000       0x2c ql_app_libs/libql_app_power.a(power_demo.c.obj)
+ .rodata.ql_pwrkey_app_init.str1.1
+                0x00000000       0x34 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+ .rodata.ql_pwrkey_demo_thread.str1.1
+                0x00000000       0x6b ql_app_libs/libql_app_power.a(power_demo.c.obj)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+flash            0x60250000         0x00120000         xr
+ram              0x80fe0000         0x00020000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD lib/core_stub.o
+LOAD components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+LOAD ../../components/newlib/armca5/libc.a
+LOAD ../../components/newlib/armca5/libm.a
+LOAD ../../prebuilts/win32/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-ar/fpv3/hard/libgcc.a
+LOAD ql_app_libs/libql_app_nw.a
+LOAD ql_app_libs/libql_app_peripheral.a
+LOAD ql_app_libs/libql_app_osi.a
+LOAD ql_app_libs/libql_app_dev.a
+LOAD ql_app_libs/libql_app_sim.a
+LOAD ql_app_libs/libql_app_power.a
+LOAD ql_app_libs/libql_app_usb.a
+LOAD ql_app_libs/libql_app_ftp.a
+LOAD ql_app_libs/libql_app_http.a
+LOAD ql_app_libs/libql_app_mqtt.a
+LOAD ql_app_libs/libql_app_ssl.a
+LOAD ql_app_libs/libql_app_ping.a
+LOAD ql_app_libs/libql_app_ntp.a
+LOAD ql_app_libs/libql_app_socket.a
+LOAD ql_app_libs/libql_app_audio.a
+LOAD ql_app_libs/libql_app_lcd.a
+LOAD ql_app_libs/libql_app_lvgl.a
+LOAD ql_app_libs/libql_app_camera.a
+LOAD ql_app_libs/libql_app_file.a
+LOAD ql_app_libs/libql_app_sms.a
+LOAD ql_app_libs/libql_app_voice_call.a
+LOAD ql_app_libs/libql_app_spi.a
+LOAD ql_app_libs/libql_app_spi_nor_flash.a
+LOAD ql_app_libs/libql_app_spi6_ext_nor_flash.a
+LOAD ql_app_libs/libql_app_spi_nand_flash.a
+LOAD ql_app_libs/libql_app_decoder.a
+LOAD ../../components/newlib/armca5/libql_api_decoder.a
+LOAD ../../components/newlib/armca5/decoder_8910.a
+LOAD ../../components/newlib/armca5/libm.a
+LOAD ql_app_libs/libql_app_img_at.a
+LOAD ql_app_libs/libql_app_rtc.a
+LOAD ql_app_libs/libql_ali_linkSDK.a
+LOAD ql_app_libs/libql_qcloud_iot.a
+LOAD ql_app_libs/libql_app_virt_at.a
+LOAD ql_app_libs/libql_app_http_fota.a
+LOAD ql_app_libs/libql_app_ftp_fota.a
+LOAD ql_app_libs/libql_app_i2c.a
+LOAD ql_app_libs/libql_app_sdmmc.a
+LOAD ql_app_libs/libql_app_mxml.a
+LOAD ql_app_libs/libql_app_hilinksdk.a
+LOAD ql_app_libs/libql_app_hilinksdk.a
+LOAD lib/ql_hilinksdk.a
+START GROUP
+LOAD ..\..\components\newlib\armca5\libc.a
+LOAD ..\..\components\newlib\armca5\libm.a
+LOAD ..\..\prebuilts\win32\gcc-arm-none-eabi\lib\gcc\arm-none-eabi\7.2.1\thumb\v7-ar\fpv3\hard\libgcc.a
+LOAD ..\..\components\quectel\ql_open\ql_examples\HiLinkSDK\lib\tl8251\lib\debug\libhilinkbtsdk.a
+LOAD ..\..\components\quectel\ql_open\ql_examples\HiLinkSDK\lib\WiFi\ota\debug\libhilinkota.a
+LOAD ..\..\components\quectel\ql_open\ql_examples\HiLinkSDK\lib\WiFi\softap\debug\libhilinkdevicesdk.a
+END GROUP
+LOAD ../../components/newlib/armca5/libm.a
+LOAD ql_app_libs/libql_app_xlat.a
+LOAD ql_app_libs/liblvgl.a
+LOAD ql_app_libs/libql_app_peripheral.a
+LOAD ql_app_libs/libql_app_hilinksdk.a
+LOAD ../../components/newlib/armca5/libql_newlib.a
+LOAD ../../components/newlib/armca5/libc.a
+LOAD ../../components/newlib/armca5/libm.a
+LOAD ../../prebuilts/win32/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-ar/fpv3/hard/libgcc.a
+                0x00000000                PROVIDE (appimg_get_param, 0x0)
+                0x00000000                PROVIDE (appimg_set_param, 0x0)
+                0x60250000                . = ORIGIN (flash)
+                0x60250000                __flash_start = .
+
+.imageheader    0x60250000       0x80
+                0x60250000        0x4 LONG 0x41505032
+                0x60250004        0x4 LONG 0x0
+                0x60250008        0x4 LONG 0x0
+ *(.rodata.core_stub.header)
+ .rodata.core_stub.header
+                0x6025000c       0x14 lib/core_stub.o
+                0x6025000c                gAppImageCoreHeader
+                0x60250020        0x4 LONG 0x2
+                0x60250024        0x4 LONG 0x80 (__corestub_load_start - __flash_start)
+                0x60250028        0x4 LONG 0xa0 (__corestub_end - __corestub_start)
+                0x6025002c        0x4 LONG 0x80fe0000 __corestub_start
+                0x60250030        0x4 LONG 0x4
+                0x60250034        0x4 LONG 0x120 (__text_load_start - __flash_start)
+                0x60250038        0x4 LONG 0xa7a (__text_end - __text_start)
+                0x6025003c        0x4 LONG 0x60250120 __text_start
+                0x60250040        0x4 LONG 0x4
+                0x60250044        0x4 LONG 0xba0 (__init_array_load_start - __flash_start)
+                0x60250048        0x4 LONG 0x0 (__init_array_end - __init_array_start)
+                0x6025004c        0x4 LONG 0x60250ba0 __init_array_start
+                0x60250050        0x4 LONG 0x1
+                0x60250054        0x4 LONG 0x120 (__data_load_start - __flash_start)
+                0x60250058        0x4 LONG 0x0 (__data_end - __data_start)
+                0x6025005c        0x4 LONG 0x80fe00a0 __data_start
+                0x60250060        0x4 LONG 0x3
+                0x60250064        0x4 LONG 0x0
+                0x60250068        0x4 LONG 0x10 (__bss_end - __bss_start)
+                0x6025006c        0x4 LONG 0x80fe00a0 __bss_start
+                0x60250070        0x4 LONG 0x0
+                0x60250074        0x4 LONG 0x0
+                0x60250078        0x4 LONG 0x0
+                0x6025007c        0x4 LONG 0x0
+                0x00000001                ASSERT ((SIZEOF (.imageheader) == 0x80), invalid app image header)
+                0x80fe0000                . = ORIGIN (ram)
+                0x80fe0000                __ram_start = .
+
+.corestub       0x80fe0000       0xa0 load address 0x60250080
+                0x80fe0000                __corestub_start = .
+ *(.text.core_stub.*)
+ .text.core_stub.osiTracePrintf
+                0x80fe0000        0x8 lib/core_stub.o
+                0x80fe0000                osiTracePrintf
+ .text.core_stub.ql_autosleep_enable
+                0x80fe0008        0x8 lib/core_stub.o
+                0x80fe0008                ql_autosleep_enable
+ .text.core_stub.ql_dev_cfg_wdt
+                0x80fe0010        0x8 lib/core_stub.o
+                0x80fe0010                ql_dev_cfg_wdt
+ .text.core_stub.ql_event_try_wait
+                0x80fe0018        0x8 lib/core_stub.o
+                0x80fe0018                ql_event_try_wait
+ .text.core_stub.ql_gpio_init
+                0x80fe0020        0x8 lib/core_stub.o
+                0x80fe0020                ql_gpio_init
+ .text.core_stub.ql_gpio_set_level
+                0x80fe0028        0x8 lib/core_stub.o
+                0x80fe0028                ql_gpio_set_level
+ .text.core_stub.ql_ledcfg_callback_register
+                0x80fe0030        0x8 lib/core_stub.o
+                0x80fe0030                ql_ledcfg_callback_register
+ .text.core_stub.ql_lpm_wakelock_unlock
+                0x80fe0038        0x8 lib/core_stub.o
+                0x80fe0038                ql_lpm_wakelock_unlock
+ .text.core_stub.ql_pin_set_func
+                0x80fe0040        0x8 lib/core_stub.o
+                0x80fe0040                ql_pin_set_func
+ .text.core_stub.ql_power_down
+                0x80fe0048        0x8 lib/core_stub.o
+                0x80fe0048                ql_power_down
+ .text.core_stub.ql_power_reset
+                0x80fe0050        0x8 lib/core_stub.o
+                0x80fe0050                ql_power_reset
+ .text.core_stub.ql_pwm_lpg_enable
+                0x80fe0058        0x8 lib/core_stub.o
+                0x80fe0058                ql_pwm_lpg_enable
+ .text.core_stub.ql_pwm_open
+                0x80fe0060        0x8 lib/core_stub.o
+                0x80fe0060                ql_pwm_open
+ .text.core_stub.ql_rtos_event_send
+                0x80fe0068        0x8 lib/core_stub.o
+                0x80fe0068                ql_rtos_event_send
+ .text.core_stub.ql_rtos_task_create
+                0x80fe0070        0x8 lib/core_stub.o
+                0x80fe0070                ql_rtos_task_create
+ .text.core_stub.ql_rtos_task_delete
+                0x80fe0078        0x8 lib/core_stub.o
+                0x80fe0078                ql_rtos_task_delete
+ .text.core_stub.ql_rtos_task_sleep_ms
+                0x80fe0080        0x8 lib/core_stub.o
+                0x80fe0080                ql_rtos_task_sleep_ms
+ .text.core_stub.ql_sleep_register_cb
+                0x80fe0088        0x8 lib/core_stub.o
+                0x80fe0088                ql_sleep_register_cb
+ .text.core_stub.ql_usb_bind_hotplug_cb
+                0x80fe0090        0x8 lib/core_stub.o
+                0x80fe0090                ql_usb_bind_hotplug_cb
+ .text.core_stub.ql_wakeup_register_cb
+                0x80fe0098        0x8 lib/core_stub.o
+                0x80fe0098                ql_wakeup_register_cb
+                0x80fe00a0                __corestub_end = .
+                0x80fe00a0                . = ALIGN (0x20)
+                0x60250080                __corestub_load_start = LOADADDR (.corestub)
+
+.data           0x80fe00a0        0x0 load address 0x60250120
+                0x80fe00a0                __data_start = .
+ *(.data .data.* .gnu.linkonce.d.*)
+                0x80fe00a0                __data_end = .
+                0x80fe00a0                . = ALIGN (0x20)
+                0x60250120                __data_load_start = LOADADDR (.data)
+
+.igot.plt       0x60250120        0x0
+ .igot.plt      0x60250120        0x0 lib/core_stub.o
+
+.bss            0x80fe00a0       0x20
+                0x80fe00a0                __bss_start = .
+ *(.bss .bss.* COMMON .scommon .sbss .sbss.* .sbss2 .sbss2.* .gnu.linkonce.b.*)
+ .bss.ledcfg_task
+                0x80fe00a0        0x4 ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+                0x80fe00a0                ledcfg_task
+ .bss.power_task
+                0x80fe00a4        0x4 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+                0x80fe00a4                power_task
+ COMMON         0x80fe00a8        0x8 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+                0x80fe00a8                wake_lock_1
+                0x80fe00ac                wake_lock_2
+                0x80fe00b0                __bss_end = .
+                0x80fe00c0                . = ALIGN (0x20)
+ *fill*         0x80fe00b0       0x10 
+                0x60250120                . = ((LOADADDR (.corestub) + SIZEOF (.corestub)) + SIZEOF (.data))
+
+.text           0x60250120      0xa80
+                0x60250120                __text_start = .
+ *(.text .text.* .gnu.linkonce.t.* .rdata .rodata .rodata.* .gnu.linkonce.r.* .glue_7 .glue_7t .vfp11_veneer .v4_bx)
+ .glue_7        0x60250120        0x0 linker stubs
+ .glue_7t       0x60250120        0x0 linker stubs
+ .vfp11_veneer  0x60250120        0x0 linker stubs
+ .v4_bx         0x60250120        0x0 linker stubs
+ .text.ql_init_demo_thread
+                0x60250120       0x3c components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .text.ql_pin_cfg_init
+                0x6025015c       0x6c components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+                0x6025015c                ql_pin_cfg_init
+ .text.appimg_enter
+                0x602501c8       0x9c components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+                0x602501c8                appimg_enter
+ .text.appimg_exit
+                0x60250264       0x1c components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+                0x60250264                appimg_exit
+ .rodata.appimg_enter.str1.1
+                0x60250280       0x5e components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .rodata.appimg_exit.str1.1
+                0x602502de       0x15 components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .rodata.ql_init_demo_thread.str1.1
+                0x602502f3       0x29 components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .rodata.ql_pin_cfg_init.str1.1
+                0x6025031c       0x14 components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .text.ql_ledcfg_demo_thread
+                0x60250330      0x14c ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+ .text._ledcfg_demo_cb
+                0x6025047c       0x5c ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+ .text.ql_ledcfg_app_init
+                0x602504d8       0x50 ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+                0x602504d8                ql_ledcfg_app_init
+ .rodata._ledcfg_demo_cb.str1.1
+                0x60250528       0x4e ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+ .rodata.ql_ledcfg_app_init.str1.1
+                0x60250576       0x38 ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+ .rodata.ql_ledcfg_demo_thread.str1.1
+                0x602505ae      0x128 ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+ .rodata.ql_pin_cfg_map
+                0x602506d6      0x17a ql_app_libs/libql_app_peripheral.a(ql_pin_cfg.c.obj)
+                0x602506d6                ql_pin_cfg_map
+ .text.ql_enter_sleep_cb
+                0x60250850        0x2 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+                0x60250850                ql_enter_sleep_cb
+ *fill*         0x60250852        0x2 
+ .text.ql_power_demo_thread
+                0x60250854      0x120 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+ .text.usb_hotplug_cb
+                0x60250974       0x30 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+                0x60250974                usb_hotplug_cb
+ .text.ql_exit_sleep_cb
+                0x602509a4        0x2 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+                0x602509a4                ql_exit_sleep_cb
+ *fill*         0x602509a6        0x2 
+ .text.ql_power_app_init
+                0x602509a8       0x50 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+                0x602509a8                ql_power_app_init
+ .text.ql_power_app_init.__stub
+                0x602509f8       0xb8 linker stubs
+ .rodata.ql_power_app_init.str1.1
+                0x60250ab0       0x32 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+ .rodata.ql_power_demo_thread.str1.1
+                0x60250ae2       0x92 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+ .rodata.usb_hotplug_cb.str1.1
+                0x60250b74       0x26 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+                0x60250b9a                __text_end = .
+                0x60250ba0                . = ALIGN (0x20)
+ *fill*         0x60250b9a        0x6 
+                0x60250120                __text_load_start = LOADADDR (.text)
+
+.iplt           0x60250ba0        0x0
+ .iplt          0x60250ba0        0x0 lib/core_stub.o
+
+.rel.dyn        0x60250ba0        0x0
+ .rel.iplt      0x60250ba0        0x0 lib/core_stub.o
+
+.init_array     0x60250ba0        0x0
+                0x60250ba0                __init_array_start = .
+ *(.init_array*)
+                0x60250ba0                __init_array_end = .
+                0x60250ba0                . = ALIGN (0x20)
+                0x60250ba0                __init_array_load_start = LOADADDR (.init_array)
+                0x60250ba0                __flash_end = (ADDR (.init_array) + SIZEOF (.init_array))
+                0x80fe00c0                __ram_end = (ADDR (.bss) + SIZEOF (.bss))
+                0x00000001                ASSERT ((__flash_end <= (ORIGIN (flash) + LENGTH (flash))), FLASH overflow)
+                0x00000001                ASSERT ((__ram_end <= (ORIGIN (ram) + LENGTH (ram))), RAM overflow)
+
+.comment        0x00000000       0x7e
+ *(.comment)
+ .comment       0x00000000       0x7e components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+                                 0x7f (size before relaxing)
+ .comment       0x0000007e       0x7f ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+ .comment       0x0000007e       0x7f ql_app_libs/libql_app_peripheral.a(ql_pin_cfg.c.obj)
+ .comment       0x0000007e       0x7f ql_app_libs/libql_app_power.a(power_demo.c.obj)
+
+.ARM.attributes
+                0x00000000       0x39
+ .ARM.attributes
+                0x00000000       0x2b lib/core_stub.o
+ .ARM.attributes
+                0x0000002b       0x3d components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .ARM.attributes
+                0x00000068       0x3d ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+ .ARM.attributes
+                0x000000a5       0x3d ql_app_libs/libql_app_peripheral.a(ql_pin_cfg.c.obj)
+ .ARM.attributes
+                0x000000e2       0x3d ql_app_libs/libql_app_power.a(power_demo.c.obj)
+
+/DISCARD/
+ *(.dynstr*)
+ *(.dynamic*)
+ *(.plt*)
+ *(.interp*)
+ *(.gnu*)
+OUTPUT(hex\examples\EC600UECACR03A07M08_OCPU_APP.elf elf32-littlearm)
+
+.debug_info     0x00000000     0x626b
+ .debug_info    0x00000000     0x190c components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .debug_info    0x0000190c     0x1d56 ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+ .debug_info    0x00003662      0xce3 ql_app_libs/libql_app_peripheral.a(ql_pin_cfg.c.obj)
+ .debug_info    0x00004345     0x1f26 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+
+.debug_abbrev   0x00000000      0xbf6
+ .debug_abbrev  0x00000000      0x37e components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .debug_abbrev  0x0000037e      0x31e ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+ .debug_abbrev  0x0000069c      0x1c0 ql_app_libs/libql_app_peripheral.a(ql_pin_cfg.c.obj)
+ .debug_abbrev  0x0000085c      0x39a ql_app_libs/libql_app_power.a(power_demo.c.obj)
+
+.debug_loc      0x00000000      0x560
+ .debug_loc     0x00000000      0x25a components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .debug_loc     0x0000025a      0x183 ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+ .debug_loc     0x000003dd      0x183 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+
+.debug_aranges  0x00000000       0xf8
+ .debug_aranges
+                0x00000000       0x40 components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .debug_aranges
+                0x00000040       0x30 ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+ .debug_aranges
+                0x00000070       0x18 ql_app_libs/libql_app_peripheral.a(ql_pin_cfg.c.obj)
+ .debug_aranges
+                0x00000088       0x70 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+
+.debug_ranges   0x00000000       0xe0
+ .debug_ranges  0x00000000       0x60 components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .debug_ranges  0x00000060       0x20 ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+ .debug_ranges  0x00000080       0x60 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+
+.debug_line     0x00000000      0xcbd
+ .debug_line    0x00000000      0x3f8 components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .debug_line    0x000003f8      0x308 ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+ .debug_line    0x00000700      0x1f8 ql_app_libs/libql_app_peripheral.a(ql_pin_cfg.c.obj)
+ .debug_line    0x000008f8      0x3c5 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+
+.debug_str      0x00000000     0x366b
+ .debug_str     0x00000000     0x15b3 components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+                               0x1662 (size before relaxing)
+ .debug_str     0x000015b3     0x1d30 ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+                               0x2b98 (size before relaxing)
+ .debug_str     0x000032e3       0x45 ql_app_libs/libql_app_peripheral.a(ql_pin_cfg.c.obj)
+                                0xefe (size before relaxing)
+ .debug_str     0x00003328      0x343 ql_app_libs/libql_app_power.a(power_demo.c.obj)
+                               0x2b61 (size before relaxing)
+
+.debug_frame    0x00000000      0x244
+ .debug_frame   0x00000000       0x9c components/quectel/ql_open/ql_examples/init/CMakeFiles/EC600UECACR03A07M08_OCPU_APP.dir/ql_init.c.obj
+ .debug_frame   0x0000009c       0x68 ql_app_libs/libql_app_peripheral.a(led_cfg_demo.c.obj)
+ .debug_frame   0x00000104      0x140 ql_app_libs/libql_app_power.a(power_demo.c.obj)

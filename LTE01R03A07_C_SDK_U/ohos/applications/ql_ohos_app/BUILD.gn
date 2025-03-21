@@ -1,0 +1,6 @@
+import("//build/lite/config/component/lite_component.gni")
+lite_component("ql_ohos_demo") {
+    features = [
+        "gpio:ql_ohos_demo_gpio"
+    ]
+}

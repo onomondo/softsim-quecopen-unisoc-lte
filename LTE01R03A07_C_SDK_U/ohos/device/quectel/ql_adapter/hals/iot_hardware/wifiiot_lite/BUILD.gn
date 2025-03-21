@@ -1,0 +1,22 @@
+static_library("hal_iothardware") {
+  if (board_name == "ecx00u") {
+    sources = [
+      "hal_iot_gpio.c",
+      "hal_iot_uart.c",
+      "hal_iot_i2c.c",
+      "hal_iot_pwm.c",
+      "hal_iot_flash.c",
+      "hal_iot_watchdog.c",
+    ]
+    include_dirs = [
+      # ohos 3.0
+      # "//utils/native/lite/include",
+      # "//base/iot_hardware/peripheral/interfaces/kits",
+      # ohos 3.2
+      "//commonlibrary/utils_lite/include",
+      "//base/iothardware/peripheral/interfaces/inner_api",
+    
+      "${ql_ohos_ql_sdk_topdir}/ql_ohos/ql_inc",
+    ]
+  }
+}

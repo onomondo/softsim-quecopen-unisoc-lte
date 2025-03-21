@@ -1,0 +1,9 @@
+import("//build/lite/config/component/lite_component.gni")
+
+config("mbedtls_config") {
+  include_dirs = [ "${ql_ohos_ql_sdk_topdir}/components/net/mbedtls/include" ]
+}
+
+group("mbedtls") {
+  public_configs = [ ":mbedtls_config" ]
+}
