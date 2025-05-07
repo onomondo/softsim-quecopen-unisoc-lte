@@ -1,0 +1,13 @@
+diff --git a/LTE01R03A07_C_SDK_U/components/bootloader/src/boot_fdl_dnld.c b/LTE01R03A07_C_SDK_U/components/bootloader/src/boot_fdl_dnld.c
+index e1d235e..9d1d1c7 100644
+--- a/LTE01R03A07_C_SDK_U/components/bootloader/src/boot_fdl_dnld.c
++++ b/LTE01R03A07_C_SDK_U/components/bootloader/src/boot_fdl_dnld.c
+@@ -1628,7 +1628,7 @@ bool fdlDnldStart(fdlEngine_t *fdl, unsigned devtype)
+ 
+ #endif
+ 
+-#if 0
++#if 1
+ /* 
+     If you want to format user file system when download firmware, you can open this code to do it, 
+     it will delete all files at the flash partition which for file system.

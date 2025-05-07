@@ -1,0 +1,42 @@
+diff --git a/LTE01R03A07_C_SDK_U/components/ql-application/vsim_img/CMakeLists.txt b/LTE01R03A07_C_SDK_U/components/ql-application/vsim_img/CMakeLists.txt
+index 19646ca..cf1f393 100644
+--- a/LTE01R03A07_C_SDK_U/components/ql-application/vsim_img/CMakeLists.txt
++++ b/LTE01R03A07_C_SDK_U/components/ql-application/vsim_img/CMakeLists.txt
+@@ -18,9 +18,23 @@ if(CONFIG_APPIMG_LOAD_FILE)
+ 	add_appimg_file_ql_example(${target} vsim_img_init.c)
+ endif()
+ 
++target_link_libraries(${target}
++    PRIVATE
++        onomondo_vsim_adapt
++        softsim_uicc
++        softsim_milenage
++        softsim_crypto
++        softsim_storage
++        softsim_utils
++        ss_log
++        ss_mem
++)
++target_include_directories(${target} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../onomondo/inc)
++target_include_directories(${target} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../onomondo/include)
++
+ target_link_libraries(${target} PRIVATE ${libc_file_name} ${libm_file_name} ${libgcc_file_name})
+ target_include_directories(${target} PUBLIC inc)
+ target_include_targets(${target} PRIVATE kernel driver atr)
+ 
+-relative_glob(srcs *.h *.c)
++relative_glob(srcs *.h *.c inc/*.h)
+ beautify_c_code(${target} ${srcs})
+
+diff --git a/LTE01R03A07_C_SDK_U/components/CMakeLists.txt b/LTE01R03A07_C_SDK_U/components/CMakeLists.txt
+index 4529b56..5c089c9 100644
+--- a/LTE01R03A07_C_SDK_U/components/CMakeLists.txt
++++ b/LTE01R03A07_C_SDK_U/components/CMakeLists.txt
+@@ -26,6 +26,7 @@ add_subdirectory_if_exist(firmwareupdate)
+ add_subdirectory_if_exist(fs)
+ add_subdirectory_if_exist(hal)
+ add_subdirectory_if_exist(kernel)
++add_subdirectory_if_exist(onomondo)
+ if(NOT CONFIG_QUEC_PROJECT_FEATURE)
+ add_subdirectory_if_exist(libjpeg-turbo)
+ endif()

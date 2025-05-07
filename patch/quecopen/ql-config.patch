@@ -1,0 +1,60 @@
+diff --git a/LTE01R03A07_C_SDK_U/components/ql-config/build/EG912UEAL_AC/8915DM_cat1_open/target.config b/LTE01R03A07_C_SDK_U/components/ql-config/build/EG912UEAL_AC/8915DM_cat1_open/target.config
+index 90f69d5..a257293 100644
+--- a/LTE01R03A07_C_SDK_U/components/ql-config/build/EG912UEAL_AC/8915DM_cat1_open/target.config
++++ b/LTE01R03A07_C_SDK_U/components/ql-config/build/EG912UEAL_AC/8915DM_cat1_open/target.config
+@@ -84,6 +84,10 @@ CONFIG_GPIO_X_USED_FOR_VBAT_RF=10
+ CONFIG_DTMF_KEY_DETECT_SUPPORT=y
+ CONFIG_AUDIO_CALL_KEYTONE_DETECT_SUPPORT=y
+ 
++# ONOMONDO SOFTSIM
++CONFIG_QUEC_PROJECT_FEATURE_VSIM_ADAPT=y        // Enable vSIM adaption layer
++CONFIG_QUEC_PROJECT_FEATURE_VSIM_ADAPT_STD=y    // Enable vSIM feature
++
+ #AUDIO
+ CONFIG_QUEC_PROJECT_FEATURE_AUDIO=y			#audio总宏,同时包含基础功能(pcm,wav格式播放),基础功能占用39k flash  
+ CONFIG_QUEC_PROJECT_FEATURE_AUDIO_RECORD=y	#基础录音功能(pcm,wav格式),占用4k flash;注意POC模式也需要开record宏
+diff --git a/LTE01R03A07_C_SDK_U/components/ql-config/build/EG912UGL_AA/8915DM_cat1_open/target.config b/LTE01R03A07_C_SDK_U/components/ql-config/build/EG912UGL_AA/8915DM_cat1_open/target.config
+index 5163fc7..ee43776 100644
+--- a/LTE01R03A07_C_SDK_U/components/ql-config/build/EG912UGL_AA/8915DM_cat1_open/target.config
++++ b/LTE01R03A07_C_SDK_U/components/ql-config/build/EG912UGL_AA/8915DM_cat1_open/target.config
+@@ -86,6 +86,10 @@ CONFIG_GPIO_X_USED_FOR_VBAT_RF=10
+ CONFIG_DTMF_KEY_DETECT_SUPPORT=y
+ CONFIG_AUDIO_CALL_KEYTONE_DETECT_SUPPORT=y
+ 
++# ONOMONDO SOFTSIM
++CONFIG_QUEC_PROJECT_FEATURE_VSIM_ADAPT=y        // Enable vSIM adaption layer
++CONFIG_QUEC_PROJECT_FEATURE_VSIM_ADAPT_STD=y    // Enable vSIM feature
++
+ #AUDIO
+ CONFIG_QUEC_PROJECT_FEATURE_AUDIO=y			#audio总宏,同时包含基础功能(pcm,wav格式播放),基础功能占用39k flash  
+ CONFIG_QUEC_PROJECT_FEATURE_AUDIO_RECORD=y	#基础录音功能(pcm,wav格式),占用4k flash;注意POC模式也需要开record宏
+diff --git a/LTE01R03A07_C_SDK_U/components/ql-config/build/EG915UEU_AB/8915DM_cat1_open/target.config b/LTE01R03A07_C_SDK_U/components/ql-config/build/EG915UEU_AB/8915DM_cat1_open/target.config
+index 570464a..5e5fcba 100644
+--- a/LTE01R03A07_C_SDK_U/components/ql-config/build/EG915UEU_AB/8915DM_cat1_open/target.config
++++ b/LTE01R03A07_C_SDK_U/components/ql-config/build/EG915UEU_AB/8915DM_cat1_open/target.config
+@@ -84,6 +84,10 @@ CONFIG_DTMF_KEY_DETECT_SUPPORT=y
+ CONFIG_AUDIO_CALL_KEYTONE_DETECT_SUPPORT=y
+ CONFIG_QUEC_PROJECT_FEATURE_DSSS=y
+ 
++# ONOMONDO SOFTSIM
++CONFIG_QUEC_PROJECT_FEATURE_VSIM_ADAPT=y        // Enable vSIM adaption layer
++CONFIG_QUEC_PROJECT_FEATURE_VSIM_ADAPT_STD=y    // Enable vSIM feature
++
+ #AUDIO
+ CONFIG_QUEC_PROJECT_FEATURE_AUDIO=y			#audio总宏,同时包含基础功能(pcm,wav格式播放),基础功能占用39k flash  
+ CONFIG_QUEC_PROJECT_FEATURE_AUDIO_RECORD=y	#基础录音功能(pcm,wav格式),占用4k flash;注意POC模式也需要开record宏
+diff --git a/LTE01R03A07_C_SDK_U/components/ql-config/build/EG915ULA_AB/8915DM_cat1_open/target.config b/LTE01R03A07_C_SDK_U/components/ql-config/build/EG915ULA_AB/8915DM_cat1_open/target.config
+index c08092b..935d1b3 100644
+--- a/LTE01R03A07_C_SDK_U/components/ql-config/build/EG915ULA_AB/8915DM_cat1_open/target.config
++++ b/LTE01R03A07_C_SDK_U/components/ql-config/build/EG915ULA_AB/8915DM_cat1_open/target.config
+@@ -84,6 +84,10 @@ CONFIG_DTMF_KEY_DETECT_SUPPORT=y
+ CONFIG_AUDIO_CALL_KEYTONE_DETECT_SUPPORT=y
+ CONFIG_QUEC_PROJECT_FEATURE_DSSS=y
+ 
++# ONOMONDO SOFTSIM
++CONFIG_QUEC_PROJECT_FEATURE_VSIM_ADAPT=y        // Enable vSIM adaption layer
++CONFIG_QUEC_PROJECT_FEATURE_VSIM_ADAPT_STD=y    // Enable vSIM feature
++
+ #AUDIO
+ CONFIG_QUEC_PROJECT_FEATURE_AUDIO=y			#audio总宏,同时包含基础功能(pcm,wav格式播放),基础功能占用39k flash  
+ CONFIG_QUEC_PROJECT_FEATURE_AUDIO_RECORD=y	#基础录音功能(pcm,wav格式),占用4k flash;注意POC模式也需要开record宏
