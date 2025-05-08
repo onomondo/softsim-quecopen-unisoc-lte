@@ -1,0 +1,14 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index e148446..fe0ce9c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -18,6 +18,9 @@ option(CONFIG_USE_UTILS 		"Use the extra functionality found in the collective u
+ option(CONFIG_NO_DEFAULT_IMPL 	"Build with no default implementation")
+ option(CONFIG_BUILD_LIB_ONLY 	"Build libraries only")
+ 
++set(CMAKE_C_FLAGS "-mfloat-abi=hard")
++set(CMAKE_ASM_FLAGS "-mfloat-abi=hard")
++
+ if(CONFIG_USE_SYSTEM_HEAP)
+ 	add_compile_definitions(CONFIG_USE_SYSTEM_HEAP)
+ endif()

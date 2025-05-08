@@ -1,0 +1,7 @@
+services:
+  dev:
+    build:
+      dockerfile: Dockerfile
+    working_dir: /quecopen
+    volumes:
+      - .:/quecopen

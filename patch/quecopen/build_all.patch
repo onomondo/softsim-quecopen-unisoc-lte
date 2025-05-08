@@ -1,0 +1,33 @@
+diff --git a/LTE01R03A07_C_SDK_U/build_all.sh b/LTE01R03A07_C_SDK_U/build_all.sh
+index 69e3334..5b9d4fa 100644
+--- a/LTE01R03A07_C_SDK_U/build_all.sh
++++ b/LTE01R03A07_C_SDK_U/build_all.sh
+@@ -142,7 +142,7 @@ echo $volte_enable $quec_dsim
+ export ql_dsim_cfg="n"
+ 
+ # set vsim or vsim2 for VSIM STD solution
+-export ql_vsim_std="n"
++export ql_vsim_std="vsim2"
+ 
+ export modemdir="cat1_UIS8915DM_BB_RF_SS_cus"
+ export partitionfile="components/hal/config/8910/partinfo_8910_8m_opencpu.json"
+@@ -208,7 +208,8 @@ fi
+ echo $PATH
+ 
+ export buildver=$3
+-buildver=${buildver^^}
++# buildver=${buildver^^}
++buildver=$(echo "$3" | tr '[:lower:]' '[:upper:]')
+ 
+ export outputtype=$6
+ if test "$outputtype" != "debug";then
+@@ -236,7 +237,8 @@ export KCONFIG_CONFIG=$PROJECT_ROOT/components/ql-config/build/${ql_buildproj}/$
+ export target_out_dir=out/${BUILD_TARGET}_${BUILD_RELEASE_TYPE}
+ export PROJECT_OUT=${PROJECT_ROOT}/$target_out_dir
+ 
+-region=${ql_buildproj:6:3}
++# region=${ql_buildproj:6:3}
++region=$(echo "${ql_buildproj}" | cut -c 7-8)
+ if test "$region" = "CN_"; then
+     export IMS_DELTA_NV_ROOT=components/ql-kernel/modem/ims/cn
+ elif test "$region" = "EU_"; then

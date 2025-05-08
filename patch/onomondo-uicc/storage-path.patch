@@ -1,0 +1,33 @@
+diff --git a/include/onomondo/softsim/storage.h b/include/onomondo/softsim/storage.h
+index 4e0ba2a..c8030de 100644
+--- a/include/onomondo/softsim/storage.h
++++ b/include/onomondo/softsim/storage.h
+@@ -9,10 +9,10 @@
+ struct ss_buf;
+ struct ss_list;
+
+-// /* TODO #66: Make configurable (commandline option) */
+-extern char storage_path[];
+-
+-#define PATH_MAX 100
++#define SS_PATH_MAX 100
++#define SS_FS_DISK    "UFS:"
++#define SS_FS_BASE_DIR	 "softsim"
++#define SS_FS_STORAGE_PATH	 ""SS_FS_DISK"/"SS_FS_BASE_DIR""
+
+ int ss_storage_get_file_def(struct ss_list *path);
+ struct ss_buf *ss_storage_read_file(const struct ss_list *path, size_t read_offset, size_t read_len);
+diff --git a/src/softsim/storage.c b/src/softsim/storage.c
+index 8c6f94c..d9b72bc 100644
+--- a/src/softsim/storage.c
++++ b/src/softsim/storage.c
+@@ -21,6 +21,9 @@
+ #include <onomondo/softsim/storage.h>
+ #include <onomondo/softsim/fs.h>
+
++// /* TODO #66: Make configurable (commandline option) */
++static const char* storage_path = SS_FS_STORAGE_PATH;
++
+ #ifdef CONFIG_ALT_FILE_SEPERATOR
+ #define PATH_SEPARATOR "_"
+ #else
