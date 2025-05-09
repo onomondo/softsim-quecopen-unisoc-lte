@@ -1,0 +1,81 @@
+name: CI/CD for Quectel UNISOC LTE SDK
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  LTE01R03A07_C_SDK_U:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    strategy:
+      fail-fast: false
+      matrix:
+        radio_module: [
+          # "EC020UCN_LB",  # Quectel EC020 Series
+          # "EC200UAU_AA",  # Quectel EC200 Series
+          # "EC200UCN_AA",
+          # "EC200UCN_AD",
+          # "EC200UCN_LA",
+          # "EC200UCN_MB",
+          # "EC200UCN_MT",
+          # "EC200UCN_TA",
+          # "EC200UEU_AA",
+          # "EC600UCE_AB",  # Quectel EC600 Series
+          # "EC600UCN_LB",
+          # "EC600UEC_AC",
+          # "EC600UEU_AB",
+          # "EC600ULA_AC",
+          # "EG070UCN_AC",  # Quectel EG070 Series
+          # "EG070UEU_AB",
+          # "EG070ULA_AB",
+          # "EG700UCN_LB",  # Quectel EG700 Series
+          # "EG700UCN_MC",
+          "EG912UGL_AA",  # Quectel EG912 Series.
+          "EG912UEAL_AC",
+          "EG915UEU_AB",  # Quectel EG915 Series
+          # "EG915UCN_AB",
+          # "EG915UEC_AB",
+          # "EG915ULA_AD",
+          "EG915ULA_AB"]
+        debug_or_release: ["release"]
+
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          token: ${{ secrets.GH_AUTH_TOKEN }}
+
+      - name: Docker Compose and Build
+        run: |
+          docker compose run dev ./github_actions_build.sh ${{ matrix.radio_module }} ${{ matrix.debug_or_release }}
+
+      - name: Archive Build Files of Quectel UNISOC LTE SDK
+        # Limit the archive mechanism to only run on master
+        if: github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts-${{ matrix.radio_module }}
+          path: LTE01R03A07_C_SDK_U/target/**/*_merge.pac
+          compression-level: 6
+          overwrite: false
+          if-no-files-found: error
+
+      - name: Archive Build Files of Pull Request
+        if: github.ref != 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-build-artifacts-${{ matrix.radio_module }}
+          path: LTE01R03A07_C_SDK_U/target/**/*_merge.pac
+          compression-level: 6
+          overwrite: false
+          retention-days: 1
+          if-no-files-found: warn
