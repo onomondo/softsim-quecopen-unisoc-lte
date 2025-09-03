@@ -2,7 +2,7 @@
 
 The Onomondo SoftSIM is an [Open Source](https://github.com/onomondo/onomondo-uicc) C based UICC implementation, allowing new and innovative cellular device designs to see the light of day in the ever-growing landscape of IoT!
 
-This project aims to demonstrate how the SoftSIM UICC form factor can be integrated into one of Quectel's QuecOpen SDK's that covers more than 25 radio modules. This list includes Quectel EG912U-GL, EG912U-EAL, EG915U-EU, and EG915U-LA just to name a few.
+This project aims to demonstrate how the SoftSIM UICC form factor can be integrated into one of Quectel's QuecOpen SDK's that covers more than 25 radio modules. This list includes Quectel EG912U-GL, EG912U-EAL, EG915U-EU, EG915U-LA, and EC200U-EU just to name a few.
 
 ## Quick Setup Guide
 #### Clone the repository

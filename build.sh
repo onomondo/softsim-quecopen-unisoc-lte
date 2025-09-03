@@ -81,6 +81,7 @@ cp --force $ROOT_DIR/patch/cores/EG912UGL_AA/8915DM_cat1_EG912UGLAAR03A02M08_BET
 cp --force $ROOT_DIR/patch/cores/EG912UEAL_AC/8915DM_cat1_EG912UEALACR03A01M08_BETA1209_VSIM2_core.pac $SDK_ROOT/components/ql-config/download/pack/EG912UEAL_AC/8915DM_cat1_open_core.pac
 cp --force $ROOT_DIR/patch/cores/EG915UEU_AB/8915DM_cat1_EG915UEUABR03A01M08_VSIM2_core.pac $SDK_ROOT/components/ql-config/download/pack/EG915UEU_AB/8915DM_cat1_open_core.pac
 cp --force $ROOT_DIR/patch/cores/EG915ULA_AB/8915DM_cat1_EG915ULAABR03A01M08_VSIM2_core.pac $SDK_ROOT/components/ql-config/download/pack/EG915ULA_AB/8915DM_cat1_open_core.pac
+cp --force $ROOT_DIR/patch/cores/EC200UEU_AA/8915DM_cat1_EC200UEUAAR03A01M08_BETA250325_VSIM2_core.pac $SDK_ROOT/components/ql-config/download/pack/EC200UEU_AA/8915DM_cat1_open_core.pac
 
 ################################
 # BUILD QUECOPEN SDK w. SOFTSIM
@@ -91,4 +92,4 @@ echo "------------------------------------------------------------"
 cd $SDK_ROOT
 chmod 755 ./build_all.sh
 ./build_all.sh new EG912UGL_AA softsim_debug_v1.0.0 VOLTE
-# Validate build targets: EG912UGL_AA, EG912UEAL_AC, EG915UEU_AB, EG915ULA_AB
+# Validate build targets: EG912UGL_AA, EG912UEAL_AC, EG915UEU_AB, EG915ULA_AB, EC200UEU_AA
