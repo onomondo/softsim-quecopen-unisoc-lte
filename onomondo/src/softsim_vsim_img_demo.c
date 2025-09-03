@@ -266,6 +266,49 @@ void ql_exec_softsim_reset_cmd(atCommand_t *cmd)
 }
 
 /**
+ * @brief Handle SoftSIM/Physical SIM switch command
+ * @param cmd AT command structure
+ */
+void ql_exec_softsim_switch_cmd(atCommand_t *cmd)
+{
+    char *softsim_switch_guide_txt = "+SETSIMTYPE=\"<tsim|ssim>\" (tsim - physical SIM, ssim - SoftSIM) ";
+
+    if (cmd->type == AT_CMD_SET && cmd->param_count == 1)
+    {
+        bool paramok = true;
+        const char *sim_type = quec_atParamStr(cmd->params[0], &paramok);
+
+        if (!paramok)
+        {
+            quec_atCmdResp(cmd->engine, ATCI_RESULT_CODE_CME_ERROR, ERR_AT_CME_PARAM_INVALID);
+            return;
+        }
+
+        if (strcmp(sim_type, "tsim") == 0)
+        {
+            // Switch to physical SIM
+            ql_vsim_adapt_set_sim_type(QL_VSIM_ADAPT_SIM_TYPE_TSIM, NULL, 0);
+            quec_atCmdResp(cmd->engine, ATCI_RESULT_CODE_OK, CMD_RC_OK);
+        }
+        else if (strcmp(sim_type, "ssim") == 0)
+        {
+            // Switch to SoftSIM
+            ql_vsim_adapt_set_sim_type(QL_VSIM_ADAPT_SIM_TYPE_SSIM, &adapt_handler, 0);
+            quec_atCmdResp(cmd->engine, ATCI_RESULT_CODE_OK, CMD_RC_OK);
+        }
+        else
+        {
+            // Unsupported parameter value, return error
+            quec_atCmdResp(cmd->engine, ATCI_RESULT_CODE_CME_ERROR, ERR_AT_CME_PARAM_INVALID);
+        }
+    }
+    else if (cmd->type == AT_CMD_TEST)
+        quec_atResp(cmd->engine, ATCI_RESULT_CODE_OK, CMD_RC_OK, softsim_switch_guide_txt, 1);
+    else
+        quec_atCmdResp(cmd->engine, ATCI_RESULT_CODE_CME_ERROR, ERR_AT_CME_PARAM_INVALID);
+}
+
+/**
  * @brief Handles the VSIM power-on events.
  *
  * This function is responsible for managing the events that occur when the
@@ -300,6 +343,8 @@ int vsim_poweron_enter(uint32_t ind_type, void *ctx)
 
         ss_reset(apductx);
 
+        // Going from SoftSIM demo to production firmware, evaluate the SoftSIM initialization process to ensure permanent SIM selection.
+        // Confirm the selected SIM card status at power on through ql_vsim_adapt_get_sim_type()
         if (ql_vsim_adapt_set_sim_type(QL_VSIM_ADAPT_SIM_TYPE_SSIM, &adapt_handler, VSIM_SIM_NUMBER) != QL_VSIM_ADAPT_SUCCESS) {
             QL_VSIM_IMG_LOG("Failed to set SIM type");
             return -1;
@@ -330,6 +375,8 @@ ql_at_desc_t app_at_desc[] = {
     {"+SOFTSIM", ql_exec_softsim_cmd, 0},
 
     {"+SOFTSIMKILLFS", ql_exec_softsim_reset_cmd, 0},
+
+    {"+SETSIMTYPE", ql_exec_softsim_switch_cmd,   0},
 
     //==>Warning: Please add new vsim AT cmd upper this line!!
     {NULL, NULL, 0}};
