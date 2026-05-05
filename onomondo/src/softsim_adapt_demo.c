@@ -79,6 +79,12 @@ static struct ss_context *apductx = NULL;
  */
 static int prv_process_apdu(uint8_t *apdu_req, uint16_t apdu_req_len, uint8_t *apdu_rsp, uint16_t *apdu_rsp_len, uint8_t slot)
 {
+    if (!apdu_req || !apdu_rsp || !apdu_rsp_len || !apductx)
+    {
+        QL_VSIM_ADAPT_DEMO_LOG("Invalid parameters in prv_process_apdu");
+        return SOFTSIM_ERROR_INVALID_PARAMS;
+    }
+
     size_t request_len = apdu_req_len;
     apdu_rsp_buf.len = ss_application_apdu_transact(apductx, apdu_rsp_buf.data, APDU_MAX_LEN + 2, apdu_req, &request_len);
 
@@ -109,8 +115,16 @@ static int prv_process_apdu(uint8_t *apdu_req, uint16_t apdu_req_len, uint8_t *a
  */
 static uint16_t prv_process_reset(uint8_t *atr_data, uint8_t *atr_size, uint8_t nSimID)
 {
-    *atr_size = 25;
+    if (!atr_data || !atr_size || !apductx)
+    {
+        QL_VSIM_ADAPT_DEMO_LOG("Invalid parameters in prv_process_reset");
+        return SOFTSIM_ERROR_INVALID_PARAMS;
+    }
+
+    *atr_size = ATR_DEFAULT_SIZE;
     size_t atr_len = ss_atr(apductx, atr_data, *atr_size);
+
+    QL_VSIM_ADAPT_DEMO_LOG("ATR length: %u", (unsigned int)atr_len);
 
     if (atr_len == 0)
     {
@@ -142,10 +156,16 @@ int vsim_adapt_poweron_enter(uint32_t ind_type, void *ctx)
     case QUEC_VSIM_ADAPT_POWERON_IND:
         QL_VSIM_ADAPT_DEMO_LOG("VSIM SoftSIM Application Initialization");
 
+        ss_storage_set_path(SS_FS_STORAGE_PATH);
+
         if (!softsim_dir_is_valid())
         {
             QL_VSIM_ADAPT_DEMO_LOG("Recreating SoftSIM Filesystem");
-            recreate_fs();
+            if (recreate_fs() != 0)
+            {
+                QL_VSIM_ADAPT_DEMO_LOG("Failed to recreate SoftSIM filesystem");
+                return -1;
+            }
         }
 
         apductx = ss_new_ctx();
@@ -158,10 +178,13 @@ int vsim_adapt_poweron_enter(uint32_t ind_type, void *ctx)
 
         ss_reset(apductx);
 
-        if (ql_vsim_adapt_set_sim_type(QL_VSIM_ADAPT_SIM_TYPE_SSIM, &adapt_handler, VSIM_SIM_NUMBER) != QL_VSIM_ADAPT_SUCCESS)
+        ql_vsim_adapt_errcode_e sim_type_ret = ql_vsim_adapt_set_sim_type(QL_VSIM_ADAPT_SIM_TYPE_SSIM, &adapt_handler, VSIM_SIM_NUMBER);
+        if (sim_type_ret != QL_VSIM_ADAPT_SUCCESS)
         {
-            QL_VSIM_IMG_LOG("Failed to set SIM type");
-            return -1;
+            /* Non-fatal: on subsequent boots the adapter is already registered from the first boot.
+             * Returning -1 here would cause the modem to skip SIM re-init and serve a stale IMSI
+             * cache. Log the code for diagnostics and continue. */
+            QL_VSIM_ADAPT_DEMO_LOG("ql_vsim_adapt_set_sim_type returned %d (continuing)", (int)sim_type_ret);
         }
         break;
 

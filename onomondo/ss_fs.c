@@ -4,11 +4,32 @@
  * SPDX-License-Identifier: GPL-3.0-only
  */
 
+#include <string.h>
 #include "ql_fs.h"
 #include "ss_fs_utils.h"
 #include "onomondo/softsim/fs.h"
+#include "onomondo/softsim/storage.h"
 #include "onomondo/softsim/mem.h"
 #include "onomondo/softsim/log.h"
+
+/* storage_path and accessors are part of the no-default-impl contract.
+ * The upstream fs.c provides these when CONFIG_NO_DEFAULT_IMPL is off;
+ * we supply them here for the QuecOpen platform build. */
+char storage_path[SS_STORAGE_PATH_MAX] = SS_STORAGE_PATH_DEFAULT;
+
+int ss_storage_set_path(const char *path)
+{
+    if (!path || strlen(path) == 0 || strlen(path) >= SS_STORAGE_PATH_MAX)
+        return -1;
+    strncpy(storage_path, path, SS_STORAGE_PATH_MAX - 1);
+    storage_path[SS_STORAGE_PATH_MAX - 1] = '\0';
+    return 0;
+}
+
+const char *ss_storage_get_path(void)
+{
+    return storage_path;
+}
 
 ss_FILE ss_fopen(char *path, char *mode)
 {
@@ -57,10 +78,10 @@ size_t ss_fread(void *ptr, size_t size, size_t nmemb, ss_FILE fp)
 
 size_t ss_fwrite(const void *prt, size_t size, size_t count, ss_FILE f)
 {
-    QFILE file = *((QFILE *)f);
     if (!f || !prt || !size || !count)
         return 0;
 
+    QFILE file = *((QFILE *)f);
     int bytes = ql_fwrite((void *)prt, size, count, file);
     if (bytes < 0)
         return 0;
@@ -95,6 +116,12 @@ int ss_delete_dir(const char *path)
 
 int ss_fseek(ss_FILE fp, long offset, int whence)
 {
+    if (!fp)
+    {
+        SS_LOGP(SSTORAGE, LERROR, "failed to seek file, invalid file pointer\n");
+        return -1;
+    }
+
     int rc = ql_fseek(*(QFILE *)fp, offset, whence);
     if (rc != offset)
     {
