@@ -6,3 +6,7 @@ build*/
 
 # Visual Studio Code
 /.vscode/
+
+# QuecOpen SDK
+LTE01R03A07_C_SDK_U/*
+!LTE01R03A07_C_SDK_U/README.md
