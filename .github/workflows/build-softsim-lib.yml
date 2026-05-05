@@ -1,0 +1,58 @@
+name: Build SoftSIM Library
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  onomondo-uicc-build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Install CMake
+        uses: lukka/get-cmake@latest
+        with:
+          cmakeVersion: 3.27.0
+          ninjaVersion: 1.11.1
+
+      - name: Install Embedded Toolchain
+        uses: carlosperate/arm-none-eabi-gcc-action@v1.11.1
+
+      - name: Apply patches to onomondo-uicc
+        working-directory: onomondo-uicc
+        run: |
+          git apply ../patch/onomondo-uicc/storage-path.patch
+          git apply ../patch/onomondo-uicc/compiler-flags.patch
+          git apply ../patch/onomondo-uicc/path-prefix.patch
+
+      - name: Configure
+        working-directory: onomondo-uicc
+        run: |
+          cmake -S . -B build \
+            -DCMAKE_C_COMPILER=arm-none-eabi-gcc \
+            -DCMAKE_AR=$(which arm-none-eabi-ar) \
+            -DCMAKE_TRY_COMPILE_TARGET_TYPE=STATIC_LIBRARY \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_TOOLCHAIN_FILE=../arm-none-eabi.cmake \
+            -DCONFIG_BUILD_LIB_ONLY=y \
+            -DCONFIG_NO_DEFAULT_IMPL=y \
+            -DCONFIG_USE_EXPERIMENTAL_SUSPEND_COMMAND=y \
+            -DCONFIG_USE_SYSTEM_HEAP=n \
+            -DCONFIG_USE_UTILS=y \
+            -DCONFIG_USE_LOGS=y
+
+      - name: Build
+        working-directory: onomondo-uicc
+        run: cmake --build build --target install
