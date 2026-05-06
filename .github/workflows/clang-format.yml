@@ -1,0 +1,29 @@
+name: Check Codebase Formatting
+
+on:
+  pull_request:
+    paths-ignore:
+      - 'onomondo-uicc/**'
+      - 'onomondo-uicc'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  clang-format:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install clang-format
+        run: sudo apt-get update && sudo apt-get install -y clang-format
+
+      - name: Check formatting
+        run: |
+          FILES=$(find onomondo -name "*.c" -o -name "*.h" \
+            | grep -v "onomondo-uicc/")
+          clang-format --dry-run -Werror $FILES
