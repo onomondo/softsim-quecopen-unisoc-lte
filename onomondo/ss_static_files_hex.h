@@ -4,11 +4,15 @@
 
 #include <stdint.h>
 
-typedef struct {
-    const char *name; const char *data; const uint32_t size;
+typedef struct
+{
+    const char *name;
+    const char *data;
+    const uint32_t size;
 } ss_file_t;
 
-typedef struct {
+typedef struct
+{
     const char *name;
 } ss_dir_t;
 

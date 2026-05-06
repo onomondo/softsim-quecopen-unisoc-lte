@@ -57,7 +57,6 @@ exit:
     return rc;
 }
 
-
 uint8_t onomondo_profile_provisioning(const char *at_profile)
 {
     struct ss_profile *profile = SS_ALLOC(*profile);
