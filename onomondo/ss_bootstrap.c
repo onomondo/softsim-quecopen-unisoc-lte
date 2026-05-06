@@ -45,24 +45,23 @@ int softsim_dir_is_valid()
     return 1;
 }
 
-
 int recreate_fs()
 {
     SS_LOGP(SSTORAGE, LINFO, "Recreating SoftSIM filesystem\n");
 
     int ret = ss_create_dir(SS_FS_STORAGE_PATH, 0);
-    if(ret == QL_DIR_DIR_ALREADY_EXIST)
+    if (ret == QL_DIR_DIR_ALREADY_EXIST)
         SS_LOGP(SSTORAGE, LERROR, "dir exist, not create: %s\n", SS_FS_STORAGE_PATH);
-    else if(ret != QL_FILE_OK)
+    else if (ret != QL_FILE_OK)
         SS_LOGP(SSTORAGE, LERROR, "Failed to create storage path: %s\n", SS_FS_STORAGE_PATH);
 
-    for (int i = 0; i < ss_dirs_len-1; i++)
+    for (int i = 0; i < ss_dirs_len - 1; i++)
     {
         ret = ss_create_dir(ss_dirs[i].name, 0);
 
-        if(ret == QL_DIR_DIR_ALREADY_EXIST)
+        if (ret == QL_DIR_DIR_ALREADY_EXIST)
             SS_LOGP(SSTORAGE, LERROR, "dir exist, not create: %s\n", SS_FS_STORAGE_PATH);
-        else if(ret != 0)
+        else if (ret != 0)
             SS_LOGP(SSTORAGE, LERROR, "Failed to create storage path: %s\n", ss_dirs[i].name);
     }
 

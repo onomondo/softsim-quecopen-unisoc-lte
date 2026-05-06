@@ -40,23 +40,24 @@
 #include "ss_fs_utils.h"
 
 // Logging configuration
-#define QL_VSIM_ADAPT_LOG_LEVEL	            QL_LOG_LEVEL_INFO
-#define QL_VSIM_ADAPT_DEMO_LOG(msg, ...)    QL_LOG(QL_VSIM_ADAPT_LOG_LEVEL, "vsim_adapt_demo", msg, ##__VA_ARGS__)
+#define QL_VSIM_ADAPT_LOG_LEVEL QL_LOG_LEVEL_INFO
+#define QL_VSIM_ADAPT_DEMO_LOG(msg, ...) QL_LOG(QL_VSIM_ADAPT_LOG_LEVEL, "vsim_adapt_demo", msg, ##__VA_ARGS__)
 
 // Constants
-#define VSIM_SIM_NUMBER                 0
-#define VSIM_TASK_PRIORITY              5
-#define VSIM_TASK_STACK_SIZE            (4 * 1024)
-#define SOFTSIM_ERROR_INVALID_PARAMS    -2
+#define VSIM_SIM_NUMBER 0
+#define VSIM_TASK_PRIORITY 5
+#define VSIM_TASK_STACK_SIZE (4 * 1024)
+#define SOFTSIM_ERROR_INVALID_PARAMS -2
 
 // APDU constants
-#define APDU_MAX_LEN            256
-#define APDU_MIN_RESPONSE_LEN   2
-#define APDU_ERROR_UNSPECIFIED  0x6A82
-#define ATR_DEFAULT_SIZE        25
+#define APDU_MAX_LEN 256
+#define APDU_MIN_RESPONSE_LEN 2
+#define APDU_ERROR_UNSPECIFIED 0x6A82
+#define ATR_DEFAULT_SIZE 25
 
 // APDU response structure
-typedef struct {
+typedef struct
+{
     uint8_t data[APDU_MAX_LEN];
     size_t len;
 } ss_apdu_response_t;
@@ -65,7 +66,6 @@ typedef struct {
 static ql_task_t vsim_adapt_task = NULL;
 static ss_apdu_response_t apdu_rsp_buf;
 static struct ss_context *apductx = NULL;
-
 
 /**
  * @brief Process an APDU request and generate a response.
@@ -82,14 +82,15 @@ static int prv_process_apdu(uint8_t *apdu_req, uint16_t apdu_req_len, uint8_t *a
     size_t request_len = apdu_req_len;
     apdu_rsp_buf.len = ss_application_apdu_transact(apductx, apdu_rsp_buf.data, APDU_MAX_LEN + 2, apdu_req, &request_len);
 
-    if (apdu_rsp_buf.len < APDU_MIN_RESPONSE_LEN) {
+    if (apdu_rsp_buf.len < APDU_MIN_RESPONSE_LEN)
+    {
         QL_VSIM_ADAPT_DEMO_LOG("APDU response too short: %zu", apdu_rsp_buf.len);
         return APDU_ERROR_UNSPECIFIED;
     }
 
     // Extract response code from last two bytes
     int rsp = (apdu_rsp_buf.data[apdu_rsp_buf.len - 2] << 8) |
-               apdu_rsp_buf.data[apdu_rsp_buf.len - 1];
+              apdu_rsp_buf.data[apdu_rsp_buf.len - 1];
 
     // Copy response data
     memcpy(apdu_rsp, apdu_rsp_buf.data, apdu_rsp_buf.len);
@@ -97,7 +98,6 @@ static int prv_process_apdu(uint8_t *apdu_req, uint16_t apdu_req_len, uint8_t *a
 
     return rsp;
 }
-
 
 /**
  * @brief Process the reset and retrieve ATR (Answer To Reset) data.
@@ -123,7 +123,6 @@ static uint16_t prv_process_reset(uint8_t *atr_data, uint8_t *atr_size, uint8_t 
 
 ql_vsim_adapt_handler_s adapt_handler = {.process_apdu = prv_process_apdu,
                                          .reset = prv_process_reset};
-
 
 /**
  * @brief Handle the power-on indication for the VSIM adapter.
@@ -151,14 +150,16 @@ int vsim_adapt_poweron_enter(uint32_t ind_type, void *ctx)
 
         apductx = ss_new_ctx();
 
-        if (!apductx) {
+        if (!apductx)
+        {
             QL_VSIM_ADAPT_DEMO_LOG("Failed to allocate SoftSIM context");
             return -1;
         }
 
         ss_reset(apductx);
 
-        if (ql_vsim_adapt_set_sim_type(QL_VSIM_ADAPT_SIM_TYPE_SSIM, &adapt_handler, VSIM_SIM_NUMBER) != QL_VSIM_ADAPT_SUCCESS) {
+        if (ql_vsim_adapt_set_sim_type(QL_VSIM_ADAPT_SIM_TYPE_SSIM, &adapt_handler, VSIM_SIM_NUMBER) != QL_VSIM_ADAPT_SUCCESS)
+        {
             QL_VSIM_IMG_LOG("Failed to set SIM type");
             return -1;
         }
@@ -169,7 +170,6 @@ int vsim_adapt_poweron_enter(uint32_t ind_type, void *ctx)
     }
     return 0;
 }
-
 
 static void vsim_adapt_app_thread(void *arg)
 {
@@ -201,7 +201,6 @@ exit:
         QL_VSIM_ADAPT_DEMO_LOG("task deleted failed");
     }
 }
-
 
 int ql_vsim_adapt_init(void)
 {
