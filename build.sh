@@ -69,10 +69,18 @@ echo "------------------------------------------------------------"
 echo "Applying patches to QuecOpen SDK for Onomondo SoftSIM"
 echo "------------------------------------------------------------"
 cd $ROOT_DIR
-git apply --ignore-space-change --ignore-whitespace $ROOT_DIR/patch/quecopen/reformat_filesystem_during_download.patch
-git apply --ignore-space-change --ignore-whitespace $ROOT_DIR/patch/quecopen/ql-config.patch
-git apply --ignore-space-change --ignore-whitespace $ROOT_DIR/patch/quecopen/vsim-cmake.patch
-git apply --ignore-space-change --ignore-whitespace $ROOT_DIR/patch/quecopen/build_all.patch
+apply_patch() {
+    local patch_file="$1"
+    if git apply --check --ignore-space-change --ignore-whitespace "$patch_file" 2>/dev/null; then
+        git apply --ignore-space-change --ignore-whitespace "$patch_file"
+    else
+        echo "Patch already applied, skipping: $(basename $patch_file)"
+    fi
+}
+apply_patch $ROOT_DIR/patch/quecopen/reformat_filesystem_during_download.patch
+apply_patch $ROOT_DIR/patch/quecopen/ql-config.patch
+apply_patch $ROOT_DIR/patch/quecopen/vsim-cmake.patch
+apply_patch $ROOT_DIR/patch/quecopen/build_all.patch
 
 ################################
 # UTILIZE QUECOPEN vSIM CORE IMAGES
