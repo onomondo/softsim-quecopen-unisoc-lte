@@ -35,7 +35,7 @@
 #include "onomondo/softsim/utils.h"
 #include "onomondo/softsim/fs.h"
 #include "onomondo/utils/ss_profile.h"
-#include "ss_provisioning.h"
+#include "onomondo/utils/ss_provision.h"
 #include "ss_bootstrap.h"
 #include "ss_fs_utils.h"
 

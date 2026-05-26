@@ -13,7 +13,6 @@ target_sources(${target} PRIVATE
     ss_fs.c
     ss_bootstrap.c
     ss_static_files_hex.c
-    ss_provisioning.c
 )
 target_link_libraries(${target} INTERFACE ${libc_file_name} ${libm_file_name} ${libgcc_file_name})
 relative_glob(srcs include/*.h src/*.c inc/*.h)
