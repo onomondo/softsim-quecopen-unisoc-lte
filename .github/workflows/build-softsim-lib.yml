@@ -17,18 +17,18 @@ jobs:
 
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           submodules: true
 
       - name: Install CMake
-        uses: lukka/get-cmake@latest
+        uses: lukka/get-cmake@591817e96fcad43505fb4eae36172462abb3a42e # v4.3.3
         with:
           cmakeVersion: 3.27.0
           ninjaVersion: 1.11.1
 
       - name: Install Embedded Toolchain
-        uses: carlosperate/arm-none-eabi-gcc-action@v1.11.1
+        uses: carlosperate/arm-none-eabi-gcc-action@4c88c61a77a39a33a7722d24a4e8b2c573f766c9 # v1.11.1
 
       - name: Apply patches to onomondo-uicc
         working-directory: onomondo-uicc
