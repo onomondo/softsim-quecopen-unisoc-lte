@@ -15,6 +15,9 @@
     "enabled": true,
     "minimumReleaseAge": null
   },
+  "git-submodules": {
+    "enabled": true
+  },
   "customManagers": [
     {
       "description": "A generic custom manager for updating any yaml fields ending by 'version:' (case insensitive)",
