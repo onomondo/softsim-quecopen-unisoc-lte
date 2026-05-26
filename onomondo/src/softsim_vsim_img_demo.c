@@ -282,6 +282,8 @@ int vsim_poweron_enter(uint32_t ind_type, void *ctx)
     case QUEC_VSIM_ADAPT_POWERON_IND:
         QL_VSIM_IMG_LOG("SoftSIM Application Initialization");
 
+        ss_storage_set_path(SS_FS_STORAGE_PATH);
+
         if (!softsim_dir_is_valid())
         {
             QL_VSIM_IMG_LOG("Recreating SoftSIM Filesystem");
@@ -302,10 +304,13 @@ int vsim_poweron_enter(uint32_t ind_type, void *ctx)
 
         ss_reset(apductx);
 
-        if (ql_vsim_adapt_set_sim_type(QL_VSIM_ADAPT_SIM_TYPE_SSIM, &adapt_handler, VSIM_SIM_NUMBER) != QL_VSIM_ADAPT_SUCCESS)
+        ql_vsim_adapt_errcode_e sim_type_ret = ql_vsim_adapt_set_sim_type(QL_VSIM_ADAPT_SIM_TYPE_SSIM, &adapt_handler, VSIM_SIM_NUMBER);
+        if (sim_type_ret != QL_VSIM_ADAPT_SUCCESS)
         {
-            QL_VSIM_IMG_LOG("Failed to set SIM type");
-            return -1;
+            /* Non-fatal: on subsequent boots the adapter is already registered from the first boot.
+             * Returning -1 here would cause the modem to skip SIM re-init and serve a stale IMSI
+             * cache. Log the code for diagnostics and continue. */
+            QL_VSIM_IMG_LOG("ql_vsim_adapt_set_sim_type returned %d (continuing)", (int)sim_type_ret);
         }
         break;
 

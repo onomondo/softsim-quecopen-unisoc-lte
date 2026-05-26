@@ -33,9 +33,7 @@ jobs:
       - name: Apply patches to onomondo-uicc
         working-directory: onomondo-uicc
         run: |
-          git apply ../patch/onomondo-uicc/storage-path.patch
-          git apply ../patch/onomondo-uicc/compiler-flags.patch
-          git apply ../patch/onomondo-uicc/path-prefix.patch
+          git apply ../patch/onomondo-uicc/quectel-compat.patch
 
       - name: Configure
         working-directory: onomondo-uicc
@@ -51,7 +49,10 @@ jobs:
             -DCONFIG_USE_EXPERIMENTAL_SUSPEND_COMMAND=y \
             -DCONFIG_USE_SYSTEM_HEAP=n \
             -DCONFIG_USE_UTILS=y \
-            -DCONFIG_USE_LOGS=y
+            -DCONFIG_USE_LOGS=y \
+            -DCONFIG_SS_STORAGE_PATH_DEFAULT=UFS:/softsim \
+            -DCMAKE_C_FLAGS=-mfloat-abi=hard \
+            -DCMAKE_ASM_FLAGS=-mfloat-abi=hard
 
       - name: Build
         working-directory: onomondo-uicc

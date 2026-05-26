@@ -26,6 +26,9 @@ CMAKEFLAGS="$CMAKEFLAGS -DCONFIG_BUILD_LIB_ONLY=y"
 CMAKEFLAGS="$CMAKEFLAGS -DCONFIG_NO_DEFAULT_IMPL=y"
 CMAKEFLAGS="$CMAKEFLAGS -DCONFIG_USE_UTILS=y"
 CMAKEFLAGS="$CMAKEFLAGS -DCONFIG_USE_LOGS=y" # toggle log settings of onomondo-uicc
+CMAKEFLAGS="$CMAKEFLAGS -DCONFIG_SS_STORAGE_PATH_DEFAULT=UFS:/softsim"
+CMAKEFLAGS="$CMAKEFLAGS -DCMAKE_C_FLAGS=-mfloat-abi=hard"
+CMAKEFLAGS="$CMAKEFLAGS -DCMAKE_ASM_FLAGS=-mfloat-abi=hard"
 
 echo "Build Configuration Options:"
 echo $CMAKEFLAGS
@@ -33,14 +36,10 @@ echo $CMAKEFLAGS
 echo "------------------------------------------------------------"
 echo "Building Onomondo SoftSIM for Quectel EG91x Series Devices"
 echo "------------------------------------------------------------"
-echo Patching the SoftSIM submodule to generate static library
-cp -v $ROOT_DIR/patch/onomondo-uicc/storage-path.patch $SOFTSIM_ROOT/
-cp -v $ROOT_DIR/patch/onomondo-uicc/compiler-flags.patch $SOFTSIM_ROOT/
-cp -v $ROOT_DIR/patch/onomondo-uicc/path-prefix.patch $SOFTSIM_ROOT/
+echo Patching the SoftSIM submodule for Quectel modem compatibility
+cp -v $ROOT_DIR/patch/onomondo-uicc/quectel-compat.patch $SOFTSIM_ROOT/
 cd $SOFTSIM_ROOT
-git apply storage-path.patch
-git apply compiler-flags.patch
-git apply path-prefix.patch
+git apply quectel-compat.patch
 set -e
 echo SoftSIM Static Library Build
 cd $SOFTSIM_ROOT

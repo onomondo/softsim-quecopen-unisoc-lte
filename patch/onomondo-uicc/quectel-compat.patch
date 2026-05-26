@@ -1,0 +1,18 @@
+diff --git a/src/softsim/uicc/uicc_file_ops.c b/src/softsim/uicc/uicc_file_ops.c
+index 492fc67..ff4223c 100644
+--- a/src/softsim/uicc/uicc_file_ops.c
++++ b/src/softsim/uicc/uicc_file_ops.c
+@@ -57,9 +57,10 @@ static int fcp_reencode_full(struct ss_file *selected_file, char *command_name)
+ 	/* Get information element (IE) for tag C6, PIN Status Template */
+ 	pin_stat_templ_ie = ss_btlv_get_ie(selected_file->fcp_decoded, TS_102_221_IEI_FCP_PIN_STAT_TMPL);
+
+-	/* PIN Status Template (tag C6) should only be added for DF/ADF files, not EF files.
+-	 * See ETSI TS 102.221, Section 11.1.1.3.2, Table 11.4 - "Response for an EF with FCP template" */
+-	if (!pin_stat_templ_ie && selected_file->fcp_file_descr->type == SS_FCP_DF_OR_ADF) {
++	/* Add C6 to all file types when not already present. ETSI TS 102.221 Table 11.4
++	 * restricts C6 to DF/ADF responses, but the Quectel modem requires C6 in EF FCP
++	 * responses to resolve PIN policy. */
++	if (!pin_stat_templ_ie) {
+ 		pin_stat_templ = ss_uicc_pin_gen_pst_do();
+ 		if (!pin_stat_templ) {
+ 			SS_LOGP(SFILE, LDEBUG, "%s failed, could not generate PIN status template.\n", command_name);
