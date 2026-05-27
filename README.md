@@ -2,7 +2,7 @@
 
 The Onomondo SoftSIM is an [Open Source](https://github.com/onomondo/onomondo-uicc) C based UICC implementation, allowing new and innovative cellular device designs to see the light of day in the ever-growing landscape of IoT!
 
-This project aims to demonstrate how the SoftSIM UICC form factor can be integrated into one of Quectel's QuecOpen SDK's that covers more than 25 radio modules. This list includes Quectel EG912U-GL, EG912U-EAL, EG915U-EU, and EG915U-LA just to name a few.
+This project aims to demonstrate how the SoftSIM UICC form factor can be integrated into one of Quectel's QuecOpen SDKs that cover more than 25 radio modules. This list includes Quectel EG912U-GL, EG912U-EAL, EG915U-EU, and EG915U-LA just to name a few.
 
 ## Quick Setup Guide
 #### Clone the repository
@@ -17,7 +17,7 @@ This project aims to demonstrate how the SoftSIM UICC form factor can be integra
 ## Prerequisites
 
 ### Obtaining a SoftSIM Profile
-For SoftSIM to work, you need to obtain the keys and data that would otherwise be found in you physical SIM. This is done using what we call a SoftSIM profile. Get your free SoftSIM profile by signing up for a [free trial](https://onomondo.com/go/free-trial/).
+For SoftSIM to work, you need to obtain the keys and data that would otherwise be found in your physical SIM. This is done using what we call a SoftSIM profile. Get your free SoftSIM profile by signing up for a [free trial](https://onomondo.com/go/free-trial/).
 
 Onomondo has developed a command line interface for fetching SoftSIM profiles. This tool is expected to be used for profile downloads and profile encoding. The profile encoding is required to comply with the SoftSIM profile format expected by this project.
 
@@ -29,14 +29,14 @@ Onomondo strongly encourages that the SoftSIM profile information be managed res
 Onomondo SoftSIM can be transferred to the radio module using a custom AT command.
 
 ### SoftSIM AT Command
-As part of the Quectel SDK integration effort, a new custom AT command specifically for SoftSIM profile provisioning.
+As part of the Quectel SDK integration effort, a new custom AT command has been introduced specifically for SoftSIM profile provisioning.
 
 Test that the SoftSIM AT Command is supported by the radio module firmware:
 ```
 AT+SOFTSIM=?
 +SOFTSIM="<profile>"
 ```
-Parse an Onomondo SoftSIM profile (as exported by the Onomondo SoftSIM CLI tool) to the radio module:
+Pass an Onomondo SoftSIM profile (as exported by the Onomondo SoftSIM CLI tool) to the radio module:
 ```
 AT+SOFTSIM="01120809101010325406360214980010325476981032140320000000000000000000
 000000000000000420000102030405060708090A0B0C0D0E0F0520000102030405060708090A0B0C
@@ -44,7 +44,7 @@ AT+SOFTSIM="01120809101010325406360214980010325476981032140320000000000000000000
 ```
 
 ### SoftSIM Activation
-After successfully transferring the SoftSIM profile to the radio module, it becomes the responsibility of the module's firmware to decode and utilize the newly transferred profile. This functionality has been developed by Onomondo and integrated into this Quectel SDK project. In this projects current configuration, the Onomondo SoftSIM is the default SIM selected by the Quectel radio module.
+After successfully transferring the SoftSIM profile to the radio module, it becomes the responsibility of the module's firmware to decode and utilize the newly transferred profile. This functionality is handled by the core `onomondo-uicc` library which has been integrated into this Quectel SDK project. In this project's current configuration, the Onomondo SoftSIM is the default SIM selected by the Quectel radio module.
 
 The profile transferred using the custom `AT+SOFTSIM` command will take effect following a reset or reboot. The Quectel radio module can, for example, be reset using the AT command: `AT+CFUN=1,1`
 
@@ -62,7 +62,7 @@ With the Onomondo platform, you have the advantage of diving deep into the SIM's
 ## General Project Information
 
 This repository is the outcome of an Onomondo development project where the onomondo-uicc repository has been introduced to the Quectel QuecOpen SDK.
-During the development, the QuecOpen SDK have seen improvements and bug fixes as a result of this projects development efforts.
+During the development, the QuecOpen SDK has seen improvements and bug fixes as a result of this project's development efforts.
 The following SDK versions have been used during development:
 - **LTE01R03A04_C_SDK_U** (January 2024)
 - **LTE01R03A06_C_SDK_U** (April 2024)
@@ -70,7 +70,7 @@ The following SDK versions have been used during development:
 
 ### Firmware Flashing Tools
 
-For firmware flashing and general provisioning of your radio module, please refer the tools supplied by Quectel alongside the QuecOpen SDK. Quectel offers three different firmware downloading tools to choose from: ***QExplorer***, ***QFirehose***, and ***QLog***.
+For firmware flashing and general provisioning of your radio module, please refer to the tools supplied by Quectel alongside the QuecOpen SDK. Quectel offers three different firmware downloading tools to choose from: ***QExplorer***, ***QFirehose***, and ***QLog***.
 
 For production usage, each tool requires you to obtain a license. You can use the "QLicense tool" to get the device ID of your machine, share it with your Quectel sales representative, and a license will be issued.
 
@@ -127,10 +127,10 @@ uint16_t prv_process_reset(uint8_t *atr_data, uint8_t *atr_size, uint8_t nSimID)
 The return value of this function is `0` upon successful execution.
 
 #### vSIM Adapt
-For more information about the vSIM adapt approach, please refer to the Quectels document named *Quectel_EC200U&EG91xU_Series_QuecOpen(SDK)_vSIM_Development_Guide.pdf*. We have had some blockers on this approach, especially with the poweron indicator and initialization of the SIM when the module is powered on. The integration [softsim_adapt_demo.c](onomondo/src/softsim_adapt_demo.c) is for now kept in the repository in case fixes are released to the QuecOpen SDK. Until then, we recommend using the [vSIM Image](#vsim-image) approach.
+For more information about the vSIM adapt approach, please refer to Quectel's document named *Quectel_EC200U&EG91xU_Series_QuecOpen(SDK)_vSIM_Development_Guide.pdf*. We have had some blockers on this approach, especially with the poweron indicator and initialization of the SIM when the module is powered on. The integration [softsim_adapt_demo.c](onomondo/src/softsim_adapt_demo.c) is for now kept in the repository in case fixes are released to the QuecOpen SDK. Until then, we recommend using the [vSIM Image](#vsim-image) approach.
 
 ### Wrappers
-The core of this integration is the implementation of wrappers that tie onomondo-uicc to the SDK. Wrappers for the filesystem are provided in [ss_fs.c](onomondo/ss_fs.c), memory functions are wrapped in [mem.c](onomondo/mem.c), and onomondo-uicc debug logging is enabled via the wrapper in [log.c](onomondo/log.c).
+The core of this integration is the implementation of wrappers that tie onomondo-uicc to the SDK. Wrappers for the filesystem are provided in [ss_fs.c](onomondo/ss_fs.c), memory functions are wrapped in [mem.c](onomondo/mem.c), initialization bootstrapping is mapped in [ss_bootstrap.c](onomondo/ss_bootstrap.c), and onomondo-uicc debug logging is enabled via the wrapper in [log.c](onomondo/log.c).
 
 ### License
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
