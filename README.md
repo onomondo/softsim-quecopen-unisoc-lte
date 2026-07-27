@@ -146,3 +146,7 @@ according with:
 
 ### Contributing
 Contributions are very welcome. Please feel free to submit issues or open pull requests for review.
+
+CI checks [Conventional Commit](https://www.conventionalcommits.org/) subjects, a `Signed-off-by:` trailer on every commit (`git commit -s`), clang-format, and a signed CLA (a bot prompts on the PR).
+
+Pull requests are squash merged and credited to the author of the first commit, so submit a single commit to keep authorship.
