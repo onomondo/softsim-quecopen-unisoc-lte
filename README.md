@@ -57,7 +57,7 @@ Having successfully flashed and provisioned the SoftSIM on your device, it's tim
 1. Log into the [Onomondo platform](https://app.onomondo.com/) with your account information.
 2. Check the SIM associated with your device. You'll observe that the connection is established and behaves just like a physical SIM card.
 
-With the Onomondo platform, you have the advantage of diving deep into the SIM's connection details using features like [Network Logs](https://fast.wistia.com/embed/channel/d6nn9stg53?wchannelid=d6nn9stg53&wmediaid=xm90cpagb7), [Traffic Monitor](https://fast.wistia.com/embed/channel/d6nn9stg53?wchannelid=d6nn9stg53&wmediaid=xh5csjjcq8), and [Signaling Logs](https://fast.wistia.com/embed/channel/d6nn9stg53?wchannelid=d6nn9stg53&wmediaid=wq95alp088).
+With the Onomondo platform, you have the advantage of diving deep into the SIM's connection details using features like Network Logs, Traffic Monitor, and Signaling Logs.
 
 ## General Project Information
 
