@@ -1,3 +1,4 @@
 [submodule "onomondo-uicc"]
 	path = onomondo-uicc
 	url = git@github.com:onomondo/onomondo-uicc.git
+	branch = v2.2.1
