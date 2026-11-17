@@ -6,6 +6,9 @@ set(target onomondo_vsim_adapt)
 add_library(${target} STATIC)
 set_target_properties(${target} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${out_app_lib_dir})
 target_compile_definitions(${target} PRIVATE OSI_LOG_TAG=LOG_TAG_QUEC)
+if("$ENV{SS_USE_LOGS}" STREQUAL "y") # build.sh's toggle, shared with the library
+    target_compile_definitions(${target} PRIVATE CONFIG_USE_LOGS)
+endif()
 target_include_directories(${target} PUBLIC inc)
 target_include_directories(${target} PUBLIC include)
 
