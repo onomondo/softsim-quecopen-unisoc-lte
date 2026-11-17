@@ -58,6 +58,28 @@ typedef struct
 static ql_task_t vsim_task = NULL;
 static ss_apdu_response_t apdu_rsp_buf = {0};
 static struct ss_context *apductx = NULL;
+/* TS 102 221 14.5.6: SUSPEND UICC keeps the state across activation until RESUME.
+ * Tracked here because the core's flag clears only on a successful RESUME. */
+static bool suspended;     // SUSPEND answered 90xx/91xx
+static bool resume_window; // activated while suspended
+
+/* Commands a suspended card takes before RESUME (TS 102 221 14.5.6);
+ * GET RESPONSE completes such a SELECT under T=0. */
+static bool prv_keeps_suspended_state(const uint8_t *apdu)
+{
+    switch (apdu[1])
+    {
+    case 0xA4: // SELECT, unless by AID
+        return apdu[2] != 0x04;
+    case 0xB0: // READ BINARY
+    case 0xB2: // READ RECORD
+    case 0xAA: // TERMINAL CAPABILITY
+    case 0xC0: // GET RESPONSE
+        return true;
+    default:
+        return false;
+    }
+}
 
 /**
  * @brief Process an APDU request and generate a response.
@@ -77,6 +99,18 @@ static int prv_process_apdu(uint8_t *apdu_req, uint16_t apdu_req_len, uint8_t *a
         return SOFTSIM_ERROR_INVALID_PARAMS;
     }
 
+    // SUSPEND UICC (INS 76): P1 00 suspends, P1 01 resumes
+    bool suspend_cmd = apdu_req_len >= 4 && apdu_req[1] == 0x76;
+    bool resuming = false;
+
+    if (resume_window && apdu_req_len >= 4 && !prv_keeps_suspended_state(apdu_req))
+    {
+        resume_window = suspended = false;
+        resuming = suspend_cmd && apdu_req[2] == 0x01;
+        if (!resuming)
+            ss_reset(apductx); // any other command drops the kept state
+    }
+
     size_t request_len = apdu_req_len;
 
     apdu_rsp_buf.len = ss_application_apdu_transact(apductx, apdu_rsp_buf.data, APDU_MAX_LEN + 2, apdu_req, &request_len);
@@ -90,6 +124,12 @@ static int prv_process_apdu(uint8_t *apdu_req, uint16_t apdu_req_len, uint8_t *a
     // Extract response code from last two bytes
     int rsp = (apdu_rsp_buf.data[apdu_rsp_buf.len - 2] << 8) |
               apdu_rsp_buf.data[apdu_rsp_buf.len - 1];
+    bool rsp_ok = (rsp & 0xFE00) == 0x9000; // 90xx or 91xx
+
+    if (resuming && !rsp_ok)
+        ss_reset(apductx); // a failed RESUME drops the state too (11.1.22.3)
+    if (suspend_cmd && apdu_req[2] == 0x00)
+        suspended = rsp_ok;
 
     // Copy response data
     memcpy(apdu_rsp, apdu_rsp_buf.data, apdu_rsp_buf.len);
@@ -113,6 +153,11 @@ static uint16_t prv_process_reset(uint8_t *atr_data, uint8_t *atr_size, uint8_t 
         QL_VSIM_IMG_LOG("Invalid parameters in prv_process_reset");
         return SOFTSIM_ERROR_INVALID_PARAMS;
     }
+
+    /* A reset ends the card session; a suspended card keeps its state for RESUME. */
+    resume_window = suspended;
+    if (!suspended)
+        ss_reset(apductx);
 
     *atr_size = ATR_DEFAULT_SIZE;
     size_t atr_len = ss_atr(apductx, atr_data, *atr_size);
@@ -301,8 +346,6 @@ int vsim_poweron_enter(uint32_t ind_type, void *ctx)
             QL_VSIM_IMG_LOG("Failed to allocate SoftSIM context");
             return -1;
         }
-
-        ss_reset(apductx);
 
         ql_vsim_adapt_errcode_e sim_type_ret = ql_vsim_adapt_set_sim_type(QL_VSIM_ADAPT_SIM_TYPE_SSIM, &adapt_handler, VSIM_SIM_NUMBER);
         if (sim_type_ret != QL_VSIM_ADAPT_SUCCESS)
