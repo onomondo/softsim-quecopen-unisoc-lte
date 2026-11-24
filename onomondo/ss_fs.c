@@ -89,7 +89,7 @@ size_t ss_fwrite(const void *prt, size_t size, size_t count, ss_FILE f)
     return bytes / size;
 };
 
-int ss_file_size(char *path)
+int ss_file_size(const char *path)
 {
     QFILE f = ql_fopen(path, "r");
     if (f < 0)
