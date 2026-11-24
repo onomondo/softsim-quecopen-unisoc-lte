@@ -127,7 +127,7 @@ uint16_t prv_process_reset(uint8_t *atr_data, uint8_t *atr_size, uint8_t nSimID)
 The return value of this function is `0` upon successful execution.
 
 #### vSIM Adapt
-For more information about the vSIM adapt approach, please refer to Quectel's document named *Quectel_EC200U&EG91xU_Series_QuecOpen(SDK)_vSIM_Development_Guide.pdf*. We have had some blockers on this approach, especially with the poweron indicator and initialization of the SIM when the module is powered on. The integration [softsim_adapt_demo.c](onomondo/src/softsim_adapt_demo.c) is for now kept in the repository in case fixes are released to the QuecOpen SDK. Until then, we recommend using the [vSIM Image](#vsim-image) approach.
+For more information about the vSIM adapt approach, please refer to Quectel's document named *Quectel_EC200U&EG91xU_Series_QuecOpen(SDK)_vSIM_Development_Guide.pdf*. We have had some blockers on this approach, especially with the poweron indicator and initialization of the SIM when the module is powered on, so this integration uses the [vSIM Image](#vsim-image) approach.
 
 ### Wrappers
 The core of this integration is the implementation of wrappers that tie onomondo-uicc to the SDK. Wrappers for the filesystem are provided in [ss_fs.c](onomondo/ss_fs.c), memory functions are wrapped in [mem.c](onomondo/mem.c), initialization bootstrapping is mapped in [ss_bootstrap.c](onomondo/ss_bootstrap.c), and onomondo-uicc debug logging is enabled via the wrapper in [log.c](onomondo/log.c).
