@@ -2,151 +2,76 @@
 
 The Onomondo SoftSIM is an [Open Source](https://github.com/onomondo/onomondo-uicc) C based UICC implementation, allowing new and innovative cellular device designs to see the light of day in the ever-growing landscape of IoT!
 
-This project aims to demonstrate how the SoftSIM UICC form factor can be integrated into one of Quectel's QuecOpen SDKs that cover more than 25 radio modules. This list includes Quectel EG912U-GL, EG912U-EAL, EG915U-EU, and EG915U-LA just to name a few.
+This repository integrates it into Quectel's QuecOpen SDK for Unisoc LTE Cat 1 modules such as the EG912U-GL, EG912U-EAL, EG915U-EU and EG915U-LA. The modem forwards its SIM requests to an application image on the module, where onomondo-uicc answers them.
 
-## Quick Setup Guide
-#### Clone the repository
-`git clone --recurse-submodules git@github.com:onomondo/softsim-quecopen-unisoc-lte.git`
+This README is the quick path to a provisioned module. How it works, how to build for another module, and how provisioning behaves are in [`docs/`](docs/README.md).
 
-#### Build SoftSIM firmware within a docker container
-`docker compose run dev ./build.sh`
+## Quick start
 
-> [!Note]
-> The QuecOpen SDK (LTE01R03A07_C_SDK_U) cannot be published with this repository and must be obtained directly from Quectel.
+1. **Clone and add the SDK.**
 
-## Prerequisites
+   ```
+   git clone --recurse-submodules git@github.com:onomondo/softsim-quecopen-unisoc-lte.git
+   ```
 
-### Obtaining a SoftSIM Profile
-For SoftSIM to work, you need to obtain the keys and data that would otherwise be found in your physical SIM. This is done using what we call a SoftSIM profile. Get your free SoftSIM profile by signing up for a [free trial](https://onomondo.com/go/free-trial/).
+   The QuecOpen SDK (`LTE01R03A07_C_SDK_U`) cannot be published with this repository; obtain it from Quectel and extract it over the [`LTE01R03A07_C_SDK_U/`](LTE01R03A07_C_SDK_U/README.md) placeholder.
 
-Onomondo has developed a command line interface for fetching SoftSIM profiles. This tool is expected to be used for profile downloads and profile encoding. The profile encoding is required to comply with the SoftSIM profile format expected by this project.
+2. **Build the firmware** in the Docker container:
 
-For more information on how to set up and use the SoftSIM CLI, visit the [Onomondo Help Center](https://help.onomondo.com/en/collections/544860-softsim)
+   ```
+   docker compose run --rm dev ./build.sh
+   ```
 
-Onomondo strongly encourages that the SoftSIM profile information be managed responsibly and securely without exposure to untrusted third parties.
+   This builds for the EG912U-GL ([other modules](docs/integration.md#choosing-a-module)). The image is
+   `LTE01R03A07_C_SDK_U/target/EG912UGL_AA_SOFTSIM_DEBUG_V1.0.0/8915DM_cat1_open_SOFTSIM_DEBUG_V1.0.0_merge.pac`.
 
-## SoftSIM Profile Provisioning
-Onomondo SoftSIM can be transferred to the radio module using a custom AT command.
+3. **Flash it** with the download tools Quectel supplies with the SDK. Flashing erases the module's user filesystem, provisioned profile included.
 
-### SoftSIM AT Command
-As part of the Quectel SDK integration effort, a new custom AT command has been introduced specifically for SoftSIM profile provisioning.
+4. **Fetch a profile.** Profiles are delivered through Onomondo's API, wrapped by the
+   [onomondo-softsim-cli](https://github.com/onomondo/onomondo-softsim-cli). Generate an API key
+   at [app.onomondo.com/api-keys](https://app.onomondo.com/api-keys), then:
 
-Test that the SoftSIM AT Command is supported by the radio module firmware:
+   ```
+   ./softsim fetch --api-key <your_api_key> -n 1    # download 1 encrypted profile into ./profiles
+   ./softsim next --key=<path to your private key>  # decrypt and print the next unused profile
+   ```
+
+5. **Provision the module** on its AT port, then reset it so the modem reads the new SIM:
+
+   ```
+   AT+SOFTSIM="<profile>"
+   OK
+   AT+CFUN=1,1
+   ```
+
+   After the reboot, `AT+CIMI` and `AT+QCCID` return the profile's IMSI and ICCID, and the
+   SIM shows up as connected on the [Onomondo platform](https://app.onomondo.com/).
+
+At a glance:
+
 ```
-AT+SOFTSIM=?
-+SOFTSIM="<profile>"
-```
-Pass an Onomondo SoftSIM profile (as exported by the Onomondo SoftSIM CLI tool) to the radio module:
-```
-AT+SOFTSIM="01120809101010325406360214980010325476981032140320000000000000000000
-000000000000000420000102030405060708090A0B0C0D0E0F0520000102030405060708090A0B0C
-0D0E0F0620000102030405060708090A0B0C0D0E0F"
-```
-
-### SoftSIM Activation
-After successfully transferring the SoftSIM profile to the radio module, it becomes the responsibility of the module's firmware to decode and utilize the newly transferred profile. This functionality is handled by the core `onomondo-uicc` library which has been integrated into this Quectel SDK project. In this project's current configuration, the Onomondo SoftSIM is the default SIM selected by the Quectel radio module.
-
-The profile transferred using the custom `AT+SOFTSIM` command will take effect following a reset or reboot. The Quectel radio module can, for example, be reset using the AT command: `AT+CFUN=1,1`
-
-Verify that the profile has been correctly written to the SoftSIM filesystem by reading out the ICCID or IMSI. Use either `AT+QCCID` or `AT+CIMI` to confirm that the returned information is provided by the SoftSIM.
-Alternatively, retrieve all relevant information at once with: `AT+QGMR;+CIMI;+QCCID;+CPIN?`
-
-### SIM Management and Monitoring
-Having successfully flashed and provisioned the SoftSIM on your device, it's time to test it.
-
-1. Log into the [Onomondo platform](https://app.onomondo.com/) with your account information.
-2. Check the SIM associated with your device. You'll observe that the connection is established and behaves just like a physical SIM card.
-
-With the Onomondo platform, you have the advantage of diving deep into the SIM's connection details using features like Network Logs, Traffic Monitor, and Signaling Logs.
-
-## General Project Information
-
-This repository is the outcome of an Onomondo development project where the onomondo-uicc repository has been introduced to the Quectel QuecOpen SDK.
-During the development, the QuecOpen SDK has seen improvements and bug fixes as a result of this project's development efforts.
-The following SDK versions have been used during development:
-- **LTE01R03A04_C_SDK_U** (January 2024)
-- **LTE01R03A06_C_SDK_U** (April 2024)
-- **LTE01R03A07_C_SDK_U** (January 2025)
-
-### Firmware Flashing Tools
-
-For firmware flashing and general provisioning of your radio module, please refer to the tools supplied by Quectel alongside the QuecOpen SDK. Quectel offers three different firmware downloading tools to choose from: ***QExplorer***, ***QFirehose***, and ***QLog***.
-
-For production usage, each tool requires you to obtain a license. You can use the "QLicense tool" to get the device ID of your machine, share it with your Quectel sales representative, and a license will be issued.
-
-### Design
-
-#### vSIM Image
-The main integration of the SoftSIM functionality within the SDK is found in [softsim_vsim_img_demo.c](onomondo/src/softsim_vsim_img_demo.c). The integration includes an implementation of callback functions used during module booting, and as stated in the SDK documentation, the callback function is to be registered as soon as possible after booting; otherwise, the `QUEC_VSIM_ADAPT_POWERON_IND` event may not be obtained.
-
-```mermaid
-    flowchart LR
-    B(["ql_vsim_adapt_register_callback() <br>"]) --> C(["QUEC_VSIM_ADAPT_POWERON_IND"])
-    C --> n2(["ql_vsim_adapt_set_sim_type()"])
+            ┌───────────────────────────────────────────────┐
+LTE ~~~)))  │  Modem · Quectel vSIM core image              │
+            └───────────┬─────────────────────▲─────────────┘
+                        │                     │
+                        │  reset · APDU       │  ATR · response APDU + SW
+                        │                     │
+            ┌───────────▼─────────────────────┴─────────────┐
+            │  SoftSIM application image (this repo)        │◄─── AT+SOFTSIM="<profile>"
+            │  vSIM handlers · AT commands                  │
+            ├───────────────────────────────────────────────┤
+            │  onomondo-uicc — the SIM core                 │
+            ├───────────────────────────────────────────────┤
+            │  QuecOpen ports: UFS:/softsim · heap · log    │
+            └───────────────────────────────────────────────┘
 ```
 
-An APDU and ATR interface that ties to the modules kernel have been written as well to process this communication and tie the kernel to the onomondo-uicc. The kernel will utilize this custom interface through `ql_vsim_adapt_handler_s` when the SIM type is set to `QL_VSIM_ADAPT_SIM_TYPE_SSIM`.
-
-The structure of the APDU and ATR interface is defined as:
-```
-typedef struct {
-    ql_vsim_adapt_process_apdu  process_apdu;
-    ql_vsim_adapt_reset         reset;
-} ql_vsim_adapt_handler_s
-```
-With the following parameters:
-| Function    | Parameter | Description |
-| -------- | ------- | ------- |
-| ql_vsim_adapt_process_apdu | process_apdu | APDU interface implemented in this repository
-| ql_vsim_adapt_reset | reset | ATR interface implemented in this repository
-
-Diving into the `ql_vsim_adapt_process_apdu()` function prototype:
-```
-int prv_process_apdu(uint8_t *apdu_req, uint16_t apdu_req_len, uint8_t *apdu_rsp, uint16_t *apdu_rsp_len, uint8_t slot)
-```
-| Function    | Parameter | Direction | Description |
-| -------- | ------- | ------- | ------- |
-| ql_vsim_adapt_process_apdu | apdu_req | in | Command APDU
-|  | apdu_req_len | in | The length of command APDU
-|  | apdu_rsp | out | Response APDU
-|  | apdu_rsp_len | out | The length of Response APDU
-|  | slot | in | The (U)SIM card used. Set this parameter to 0 if the module supports only one (U)SIM interface
-
-The return value of this function is a SW1-SW2 status word.
-
-Diving into the `ql_vsim_adapt_reset()` function prototype:
-```
-uint16_t prv_process_reset(uint8_t *atr_data, uint8_t *atr_size, uint8_t nSimID)
-```
-| Function    | Parameter | Direction | Description |
-| -------- | ------- | ------- | ------- |
-| ql_vsim_adapt_reset | atr_data | out | The returned ATR data
-|  | atr_size | out | The length of the returned ATR data
-|  | nSimID | in | The (U)SIM card used. Set this parameter to 0 if the module supports only one (U)SIM interface
-
-The return value of this function is `0` upon successful execution.
-
-#### vSIM Adapt
-For more information about the vSIM adapt approach, please refer to Quectel's document named *Quectel_EC200U&EG91xU_Series_QuecOpen(SDK)_vSIM_Development_Guide.pdf*. We have had some blockers on this approach, especially with the poweron indicator and initialization of the SIM when the module is powered on, so this integration uses the [vSIM Image](#vsim-image) approach.
-
-### Wrappers
-The core of this integration is the implementation of wrappers that tie onomondo-uicc to the SDK. Wrappers for the filesystem are provided in [ss_fs.c](onomondo/ss_fs.c), memory functions are wrapped in [mem.c](onomondo/mem.c), initialization bootstrapping is mapped in [ss_bootstrap.c](onomondo/ss_bootstrap.c), and onomondo-uicc debug logging is enabled via the wrapper in [log.c](onomondo/log.c).
-
-### License
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+## License
 
 The SoftSIM for QuecOpen SDK repository, softsim-quecopen-unisoc-lte, is provided under:
 
 - SPDX-License-Identifier: GPL-3.0-only
 
-Being under the terms of the GNU General Public License version 3 only,
-according with:
+This repository is licensed under the terms of the GNU General Public License version 3 only, as provided in:
 
-- LICENSE
-
-### Contributing
-Contributions are very welcome. Please feel free to submit issues or open pull requests for review.
-
-CI checks [Conventional Commit](https://www.conventionalcommits.org/) subjects, a `Signed-off-by:` trailer on every commit (`git commit -s`), clang-format, and a signed CLA (a bot prompts on the PR).
-
-Pull requests are squash merged and credited to the author of the first commit, so submit a single commit to keep authorship.
+- [LICENSE](LICENSE)
