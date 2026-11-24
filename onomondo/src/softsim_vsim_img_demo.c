@@ -111,6 +111,10 @@ static int prv_process_apdu(uint8_t *apdu_req, uint16_t apdu_req_len, uint8_t *a
             ss_reset(apductx); // any other command drops the kept state
     }
 
+    // STATUS is the terminal's proactive poll: run the core's proactive tasks first
+    if (apdu_req_len >= 2 && apdu_req[1] == 0xF2)
+        ss_poll(apductx);
+
     size_t request_len = apdu_req_len;
 
     apdu_rsp_buf.len = ss_application_apdu_transact(apductx, apdu_rsp_buf.data, APDU_MAX_LEN + 2, apdu_req, &request_len);
