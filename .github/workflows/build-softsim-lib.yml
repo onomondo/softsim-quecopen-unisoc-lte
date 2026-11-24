@@ -17,6 +17,9 @@ jobs:
   onomondo-uicc-build:
     runs-on: ubuntu-26.04
     timeout-minutes: 15
+    strategy:
+      matrix:
+        build-type: [Debug, Release]
 
     steps:
       - name: Checkout Project
@@ -45,7 +48,7 @@ jobs:
             -DCMAKE_C_COMPILER=arm-none-eabi-gcc \
             -DCMAKE_AR=$(which arm-none-eabi-ar) \
             -DCMAKE_TRY_COMPILE_TARGET_TYPE=STATIC_LIBRARY \
-            -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_BUILD_TYPE=${{ matrix.build-type }} \
             -DCMAKE_TOOLCHAIN_FILE=../arm-none-eabi.cmake \
             -DCONFIG_BUILD_LIB_ONLY=y \
             -DCONFIG_NO_DEFAULT_IMPL=y \
