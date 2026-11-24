@@ -35,6 +35,7 @@ static uint32_t subsys_lvl[_NUM_LOG_SUBSYS] = {
     [SSMS] = LERROR,
     [SREMOTECMD] = LERROR,
     [SREFRESH] = LERROR,
+    [SAPDU] = LERROR,
 };
 
 static const char *subsys_str[_NUM_LOG_SUBSYS] = {
@@ -59,6 +60,7 @@ static const char *subsys_str[_NUM_LOG_SUBSYS] = {
     [STLV8] = "TLV8",
     [SSMS] = "SMS",
     [SREFRESH] = "REFRESH",
+    [SAPDU] = "APDU",
 };
 
 static const char *level_str[_NUM_LOG_LEVEL] = {
