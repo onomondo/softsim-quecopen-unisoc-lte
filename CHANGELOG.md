@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/onomondo/softsim-quecopen-unisoc-lte/compare/v1.1.0...v1.1.1) (2026-11-26)
+
+
+### Bug Fixes
+
+* name the APDU log subsystem ([#62](https://github.com/onomondo/softsim-quecopen-unisoc-lte/issues/62)) ([f46d7a2](https://github.com/onomondo/softsim-quecopen-unisoc-lte/commit/f46d7a21ab1e280c097d198bd091e827c765754f))
+
 ## [1.1.0](https://github.com/onomondo/softsim-quecopen-unisoc-lte/compare/v1.0.0...v1.1.0) (2026-05-29)
 
 
